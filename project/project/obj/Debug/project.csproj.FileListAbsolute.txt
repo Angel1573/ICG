@@ -9,3 +9,13 @@ C:\Users\Gerbrand\Google Drive\Periode 3\Applicatie ontwikkeling\Het Programma\p
 C:\Users\Gerbrand\Google Drive\Periode 3\Applicatie ontwikkeling\Het Programma\project\project\obj\Debug\project.exe
 C:\Users\Gerbrand\Google Drive\Periode 3\Applicatie ontwikkeling\Het Programma\project\project\obj\Debug\project.pdb
 C:\Users\Gerbrand\Google Drive\Periode 3\Applicatie ontwikkeling\Het Programma\project\project\obj\Debug\project.Studenten.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\project.exe.config
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.exe
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.pdb
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\project.exe
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\project.pdb
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.csprojResolveAssemblyReference.cache
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Hoofdscherm.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Properties.Resources.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Studenten.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.csproj.GenerateResource.Cache

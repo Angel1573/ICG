@@ -35,7 +35,10 @@ namespace project
         {
 
         }
-
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            zoekbalk();
+        }
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -55,24 +58,8 @@ namespace project
             }
             else
             {
-                string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
-                string sql = ("SELECT * FROM Instellingen WHERE " + Knopjr1 + " OR " + Knopjr2 + " OR " + Knopjr3 + " OR " + Knopjr4 + " OR " + JaarDeel);
-                OleDbConnection connection = new OleDbConnection(connetionString);
-                OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
-                DataSet ds = new DataSet();
-                try
-                {
-                    connection.Open();
-                    dataadapter.Fill(ds, "Save");
-                    connection.Close();
-                    dataGridView1.DataSource = ds;
-                    dataGridView1.DataMember = "Save";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Kan verbinding niet openen ! ");
-                }
 
+                stagelocatie();
             }
         }
 
@@ -261,7 +248,7 @@ namespace project
             }
             else
             {
-                aliB();
+                AlgemeenOverzicht();
             }
         }
 
@@ -288,23 +275,7 @@ namespace project
             }
             else
             {
-                string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Google Drive/Periode 3/Prog/21ste/BoterKaasDatabase/Database.accdb";
-                string sql = "SELECT * FROM Save Where ID = 1 ";
-                OleDbConnection connection = new OleDbConnection(connetionString);
-                OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
-                DataSet ds = new DataSet();
-                try
-                {
-                    connection.Open();
-                    dataadapter.Fill(ds, "Save");
-                    connection.Close();
-                    dataGridView1.DataSource = ds;
-                    dataGridView1.DataMember = "Save";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Kan verbinding niet openen ! ");
-                }
+                Bedrijven();
             }
         }
 
@@ -321,11 +292,11 @@ namespace project
                 if (functie2 == 1) { overzichtinstellingen_Click(sender, e); }
                 else
                 { stagelocatiestudenten_Click(sender, e); }
-               
+
             }
         }
 
-        private void aliB()
+        private void AlgemeenOverzicht()
         {
             string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
             string sql = ("SELECT Student.StudentNr, Student.Voornaam, Student.AchterNaam, Klas.Klascode, Klas.Jaar, Instelling.InstellingNaam, Instelling.AfdelingNaam FROM Student, Klas, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Jaar IN (" + Knopjr1 + " , " + Knopjr2 + " , " + Knopjr3 + " , " + Knopjr4 + " , " + JaarDeel + ") ORDER BY Student.StudentNr");
@@ -349,6 +320,86 @@ namespace project
             {
                 MessageBox.Show("Kan verbinding niet openen ! ");
             }
+
+
+        }
+        private void Bedrijven()
+        {
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Google Drive/Periode 3/Prog/21ste/BoterKaasDatabase/Database.accdb";
+            string sql = "SELECT * FROM Save Where ID = 1 ";
+            OleDbConnection connection = new OleDbConnection(connetionString);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            DataSet ds = new DataSet();
+            try
+            {
+                connection.Open();
+                dataadapter.Fill(ds, "Save");
+                connection.Close();
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "Save";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kan verbinding niet openen ! ");
+            }
+        }
+        private void stagelocatie()
+        {
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string sql = ("SELECT * FROM Instellingen WHERE " + Knopjr1 + " OR " + Knopjr2 + " OR " + Knopjr3 + " OR " + Knopjr4 + " OR " + JaarDeel);
+            OleDbConnection connection = new OleDbConnection(connetionString);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            DataSet ds = new DataSet();
+            try
+            {
+                connection.Open();
+                dataadapter.Fill(ds, "Save");
+                connection.Close();
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "Save";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kan verbinding niet openen ! ");
+            }
+        }
+        string zoekopdracht;
+        private void zoekbalk()
+        {
+            zoekopdracht = textBox1.Text;
+
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string sql = ("SELECT Student.StudentNr, Student.Voornaam, Student.AchterNaam, Klas.Klascode, Klas.Jaar, Instelling.InstellingNaam, Instelling.AfdelingNaam FROM Student, Klas, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Inschrijving.StudentNr LIKE \"%" + zoekopdracht + "%\" OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Student.Voornaam LIKE \"%" + zoekopdracht + "%\" OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Student.Achternaam LIKE \"%" + zoekopdracht + "%\" OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Klascode LIKE \"%" + zoekopdracht + "%\" OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Jaar LIKE \"%" + zoekopdracht + "%\" OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Instelling.Instellingnaam LIKE \"%" + zoekopdracht + "%\" OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Instelling.AfdelingNaam LIKE \"%" + zoekopdracht + "%\" ORDER BY Student.StudentNr");
+            //string sql = ("SELECT Student.StudentNr, Student.Voornaam, Student.AchterNaam, Klas.Klascode, Klas.Jaar, Instelling.InstellingNaam, Instelling.AfdelingNaam FROM Student, Klas, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Inschrijving.StudentNr LIKE *" + zoekopdracht + "* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Student.Voornaam LIKE *" + zoekopdracht + "* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Student.Achternaam LIKE *" + zoekopdracht + "* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Klascode LIKE *" + zoekopdracht + "* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Jaar LIKE *" + zoekopdracht + "* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Instelling.Instellingnaam LIKE *" + zoekopdracht + "* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Instelling.AfdelingNaam LIKE *" + zoekopdracht + "* ORDER BY Student.StudentNr");
+            //string sql = ("SELECT Student.Voornaam, Student.AchterNaam, Klas.Klascode, Instelling.InstellingNaam, Instelling.AfdelingNaam FROM Student, Klas, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Student.Voornaam LIKE *Jac* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Student.Achternaam LIKE *Jac* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Klascode LIKE *Jac* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Instelling.Instellingnaam LIKE *Jac* OR Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Instelling.AfdelingNaam LIKE *Jac* ORDER BY Student.VoorNaam; "); 
+            //string sql = ("SELECT Student.Voornaam, Student.AchterNaam, Klas.Klascode, Instelling.InstellingNaam, Instelling.AfdelingNaam FROM Student, Klas, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Student.Voornaam = \"Jacco\");
+            //string sql = ("SELECT * FROM Instelling WHERE InstellingNaam LIKE \"%" + zoekopdracht + "%\" ");
+            MessageBox.Show(sql);
+            OleDbConnection connection = new OleDbConnection(connetionString);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            DataSet ds = new DataSet();
+            try
+            {
+                connection.Open();
+                dataadapter.Fill(ds, "Zoek");
+                connection.Close();
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "Zoek";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kan verbinding niet openen ! ");
+            }
+
+
+
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
