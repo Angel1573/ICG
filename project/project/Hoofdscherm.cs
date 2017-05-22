@@ -18,6 +18,9 @@ namespace project
             this.TopMost = true;
 
             this.WindowState = FormWindowState.Maximized;
+            
+            allesgeselecteerd();
+            AlgemeenOverzicht();
         }
 
 
@@ -74,12 +77,16 @@ namespace project
                 Jaar1.BackColor = Color.SteelBlue;
                 een = 1;
                 Knopjr1 = 1;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
             else
             {
                 Jaar1.BackColor = Color.White;
                 een = 0;
                 Knopjr1 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
         }
 
@@ -94,12 +101,16 @@ namespace project
                 Jaar2.BackColor = Color.SteelBlue;
                 twee = 1;
                 Knopjr2 = 2;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
             else
             {
                 Jaar2.BackColor = Color.White;
                 twee = 0;
                 Knopjr2 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
         }
 
@@ -114,12 +125,16 @@ namespace project
                 Jaar3.BackColor = Color.SteelBlue;
                 drie = 1;
                 Knopjr3 = 3;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
             else
             {
                 Jaar3.BackColor = Color.White;
                 drie = 0;
                 Knopjr3 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
         }
 
@@ -134,12 +149,16 @@ namespace project
                 Jaar4.BackColor = Color.SteelBlue;
                 vier = 1;
                 Knopjr4 = 4;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
             else
             {
                 Jaar4.BackColor = Color.White;
                 vier = 0;
                 Knopjr4 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
             }
         }
 
@@ -162,8 +181,14 @@ namespace project
                 JaarDeel = 0;
             }
         }
+        //Alle jaren Knop
+
         int Allen;
         private void Alles_Click(object sender, EventArgs e)
+        {
+            allesgeselecteerd();
+        }
+        private void allesgeselecteerd()
         {
             if (Allen == 0)
             {
@@ -205,33 +230,29 @@ namespace project
                 tijd = 0;
                 JaarDeel = 0;
             }
-        }
+        } 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        {}
 
         private void studenten_Click(object sender, EventArgs e)
         {
             Studenten Studenten = new Studenten();
-
+            this.Hide();
             Studenten.Show();
         }
 
         private void Docenten_Click(object sender, EventArgs e)
         {
             Docenten Docenten = new Docenten();
-
             Docenten.Show();
         }
 
         private void Hoofdscherm_Load(object sender, EventArgs e)
-        {
-
-        }
+        {}
 
         //Refresh knop
+
         int functie1;
         private void Refresh_Click_1(object sender, EventArgs e)
         {
@@ -251,7 +272,12 @@ namespace project
                 AlgemeenOverzicht();
             }
         }
+       
 
+        private void Refresh_Click_1(object sender, object e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -259,6 +285,7 @@ namespace project
         }
 
         //Overzicht van de instellingen
+
         int functie2;
         private void overzichtinstellingen_Click(object sender, EventArgs e)
         {
@@ -291,11 +318,14 @@ namespace project
             {
                 if (functie2 == 1) { overzichtinstellingen_Click(sender, e); }
                 else
-                { stagelocatiestudenten_Click(sender, e); }
+                { if (functie3 == 1) { stagelocatiestudenten_Click(sender, e); } else { geenoptie(); } }
 
             }
+            
         }
-
+        private void geenoptie()
+        { MessageBox.Show("Seleceer een optie"); }
+        //Algemeen Overzicht Functie
         private void AlgemeenOverzicht()
         {
             string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
@@ -325,8 +355,8 @@ namespace project
         }
         private void Bedrijven()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Google Drive/Periode 3/Prog/21ste/BoterKaasDatabase/Database.accdb";
-            string sql = "SELECT * FROM Save Where ID = 1 ";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string sql = ("SELECT * FROM INSTELLING");
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
             DataSet ds = new DataSet();
@@ -346,7 +376,7 @@ namespace project
         private void stagelocatie()
         {
             string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
-            string sql = ("SELECT * FROM Instellingen WHERE " + Knopjr1 + " OR " + Knopjr2 + " OR " + Knopjr3 + " OR " + Knopjr4 + " OR " + JaarDeel);
+            string sql = ("SELECT Student.StudentNr, Student.Voornaam, Student.Achternaam, [Student.E-mail], Instelling.InstellingNaam, Instelling.AfdelingNaam, Instelling.AfdelingNr, Instelling.NaamContact, Instelling.ContactNr FROM Student, Instelling, Inschrijving WHERE Student.StudentNr = Inschrijving.StudentNr AND Instelling.InstellingNr = Inschrijving.InstellingNr");
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
             DataSet ds = new DataSet();
