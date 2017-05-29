@@ -28,11 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Home = new System.Windows.Forms.Button();
+            this.Afsluiten = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(12, 12);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(88, 23);
+            this.Home.TabIndex = 3;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            // 
+            // Afsluiten
+            // 
+            this.Afsluiten.Location = new System.Drawing.Point(12, 41);
+            this.Afsluiten.Name = "Afsluiten";
+            this.Afsluiten.Size = new System.Drawing.Size(88, 23);
+            this.Afsluiten.TabIndex = 4;
+            this.Afsluiten.Text = "Afsuiten";
+            this.Afsluiten.UseVisualStyleBackColor = true;
+            this.Afsluiten.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Docenten
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.Afsluiten);
+            this.Controls.Add(this.Home);
+            this.Name = "Docenten";
             this.Text = "Docenten";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button Home;
+        private System.Windows.Forms.Button Afsluiten;
     }
 }

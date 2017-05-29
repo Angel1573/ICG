@@ -72,8 +72,26 @@
     <Compile Include="Studenten.Designer.cs">
       <DependentUpon>Studenten.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentenAanpassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentenAanpassen.Designer.cs">
+      <DependentUpon>StudentenAanpassen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentenToevoegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentenToevoegen.Designer.cs">
+      <DependentUpon>StudentenToevoegen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Docenten.resx">
+      <DependentUpon>Docenten.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hoofdscherm.resx">
       <DependentUpon>Hoofdscherm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instellingen.resx">
+      <DependentUpon>Instellingen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +104,12 @@
     </Compile>
     <EmbeddedResource Include="Studenten.resx">
       <DependentUpon>Studenten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentenAanpassen.resx">
+      <DependentUpon>StudentenAanpassen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentenToevoegen.resx">
+      <DependentUpon>StudentenToevoegen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

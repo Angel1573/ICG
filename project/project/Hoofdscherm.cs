@@ -431,6 +431,11 @@ namespace project
         {
 
         }
+
+        private void Afsluiten_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

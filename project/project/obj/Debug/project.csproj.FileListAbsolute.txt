@@ -19,3 +19,7 @@ C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Hoofdscherm.re
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Properties.Resources.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Studenten.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.csproj.GenerateResource.Cache
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.StudentenAanpassen.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Docenten.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Instellingen.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.StudentenToevoegen.resources
