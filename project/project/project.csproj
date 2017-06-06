@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocentAanpassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocentAanpassen.Designer.cs">
+      <DependentUpon>DocentAanpassen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Docenten.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Docenten.Designer.cs">
       <DependentUpon>Docenten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docententoevoegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docententoevoegen.Designer.cs">
+      <DependentUpon>Docententoevoegen.cs</DependentUpon>
     </Compile>
     <Compile Include="Hoofdscherm.cs">
       <SubType>Form</SubType>
@@ -84,8 +96,14 @@
     <Compile Include="StudentenToevoegen.Designer.cs">
       <DependentUpon>StudentenToevoegen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DocentAanpassen.resx">
+      <DependentUpon>DocentAanpassen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Docenten.resx">
       <DependentUpon>Docenten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docententoevoegen.resx">
+      <DependentUpon>Docententoevoegen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hoofdscherm.resx">
       <DependentUpon>Hoofdscherm.cs</DependentUpon>
@@ -101,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Studenten.resx">
       <DependentUpon>Studenten.cs</DependentUpon>
@@ -123,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studenticon3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

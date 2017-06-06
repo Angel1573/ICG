@@ -28,7 +28,7 @@ namespace project
         {
             {
                 Instellingen instellingen = new Instellingen();
-
+                this.Hide();
                 instellingen.Show();
 
             }
@@ -74,7 +74,8 @@ namespace project
         {
             if (een == 0)
             {
-                Jaar1.BackColor = Color.SteelBlue;
+                Jaar1.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar1.ForeColor = Color.White;
                 een = 1;
                 Knopjr1 = 1;
                 if (Allen == 1)
@@ -83,6 +84,7 @@ namespace project
             else
             {
                 Jaar1.BackColor = Color.White;
+                Jaar1.ForeColor = Color.Black;
                 een = 0;
                 Knopjr1 = 0;
                 if (Allen == 1)
@@ -98,7 +100,8 @@ namespace project
         {
             if (twee == 0)
             {
-                Jaar2.BackColor = Color.SteelBlue;
+                Jaar2.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar2.ForeColor = Color.White;
                 twee = 1;
                 Knopjr2 = 2;
                 if (Allen == 1)
@@ -107,6 +110,7 @@ namespace project
             else
             {
                 Jaar2.BackColor = Color.White;
+                Jaar2.ForeColor = Color.Black;
                 twee = 0;
                 Knopjr2 = 0;
                 if (Allen == 1)
@@ -122,7 +126,8 @@ namespace project
         {
             if (drie == 0)
             {
-                Jaar3.BackColor = Color.SteelBlue;
+                Jaar3.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar3.ForeColor = Color.White;
                 drie = 1;
                 Knopjr3 = 3;
                 if (Allen == 1)
@@ -131,6 +136,7 @@ namespace project
             else
             {
                 Jaar3.BackColor = Color.White;
+                Jaar3.ForeColor = Color.Black;
                 drie = 0;
                 Knopjr3 = 0;
                 if (Allen == 1)
@@ -146,7 +152,8 @@ namespace project
         {
             if (vier == 0)
             {
-                Jaar4.BackColor = Color.SteelBlue;
+                Jaar4.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar4.ForeColor = Color.White;
                 vier = 1;
                 Knopjr4 = 4;
                 if (Allen == 1)
@@ -155,6 +162,7 @@ namespace project
             else
             {
                 Jaar4.BackColor = Color.White;
+                Jaar4.ForeColor = Color.Black;
                 vier = 0;
                 Knopjr4 = 0;
                 if (Allen == 1)
@@ -170,13 +178,15 @@ namespace project
         {
             if (tijd == 0)
             {
-                Deeltijd.BackColor = Color.SteelBlue;
+                Deeltijd.BackColor = Color.FromArgb(0, 55, 97);
+                Deeltijd.ForeColor = Color.White;
                 tijd = 1;
                 JaarDeel = 5;
             }
             else
             {
                 Deeltijd.BackColor = Color.White;
+                Deeltijd.ForeColor = Color.Black;
                 tijd = 0;
                 JaarDeel = 0;
             }
@@ -192,41 +202,54 @@ namespace project
         {
             if (Allen == 0)
             {
-                Alles.BackColor = Color.SteelBlue;
+                Alles.BackColor = Color.FromArgb(0, 55, 97);
+                Alles.ForeColor = Color.White;
+
                 Allen = 1;
-                Jaar4.BackColor = Color.SteelBlue;
+                Jaar4.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar4.ForeColor = Color.White;
                 vier = 1;
                 Knopjr4 = 4;
-                Deeltijd.BackColor = Color.SteelBlue;
+                Deeltijd.BackColor = Color.FromArgb(0, 55, 97);
+                Deeltijd.ForeColor = Color.White;
                 tijd = 1;
                 JaarDeel = 5;
-                Jaar3.BackColor = Color.SteelBlue;
+                Jaar3.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar3.ForeColor = Color.White;
                 drie = 1;
                 Knopjr3 = 3;
-                Jaar2.BackColor = Color.SteelBlue;
+                Jaar2.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar2.ForeColor = Color.White;
                 twee = 1;
                 Knopjr2 = 2;
-                Jaar1.BackColor = Color.SteelBlue;
+                Jaar1.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar1.ForeColor = Color.White;
                 een = 1;
                 Knopjr1 = 1;
             }
             else
             {
                 Alles.BackColor = Color.White;
+                Alles.ForeColor = Color.Black;
                 Allen = 0;
                 Jaar1.BackColor = Color.White;
+                Jaar1.ForeColor = Color.Black;
                 een = 0;
                 Knopjr1 = 0;
                 Jaar2.BackColor = Color.White;
+                Jaar2.ForeColor = Color.Black;
                 twee = 0;
                 Knopjr2 = 0;
                 Jaar3.BackColor = Color.White;
+                Jaar3.ForeColor = Color.Black;
                 drie = 0;
                 Knopjr3 = 0;
                 Jaar4.BackColor = Color.White;
+                Jaar4.ForeColor = Color.Black;
                 vier = 0;
                 Knopjr4 = 0;
                 Deeltijd.BackColor = Color.White;
+                Deeltijd.ForeColor = Color.Black;
                 tijd = 0;
                 JaarDeel = 0;
             }
@@ -245,6 +268,7 @@ namespace project
         private void Docenten_Click(object sender, EventArgs e)
         {
             Docenten Docenten = new Docenten();
+            this.Hide();
             Docenten.Show();
         }
 
@@ -254,7 +278,10 @@ namespace project
         //Refresh knop
 
         int functie1;
-        private void Refresh_Click_1(object sender, EventArgs e)
+       
+       
+
+        private void Refresh_Click_1(object sender, object e)
         {
             if (functie1 == 0)
             {
@@ -271,12 +298,6 @@ namespace project
             {
                 AlgemeenOverzicht();
             }
-        }
-       
-
-        private void Refresh_Click_1(object sender, object e)
-        {
-            throw new NotImplementedException();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -435,6 +456,11 @@ namespace project
         private void Afsluiten_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

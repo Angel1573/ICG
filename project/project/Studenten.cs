@@ -57,6 +57,7 @@ namespace project
         {
 
         }
+        //Laad alggemeen overzicht van studenten
         public void Student()
         {
             string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
@@ -77,50 +78,12 @@ namespace project
                 MessageBox.Show("Kan verbinding niet openen ! ");
             }
         }
-        private void zoeken()
-        {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
-            string sql = ("SELECT * FROM Student");
-            OleDbConnection connection = new OleDbConnection(connetionString);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
-            DataSet ds = new DataSet();
-            try
-            {
-                connection.Open();
-                dataadapter.Fill(ds, "Save");
-                connection.Close();
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "Save";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Kan verbinding niet openen ! ");
-            }
-        }
+        //private void zoeken()
+       
 
 
 
-        private void DimFill()
-        {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
-            string sql = ("SELECT * FROM Student");
-            OleDbConnection connection = new OleDbConnection(connetionString);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
-            DataSet gegevens = new DataSet();
-            DataTable dt = new DataTable();
-            try
-            {
-                connection.Open();
-                dataadapter.Fill(gegevens, "lijst");
-                connection.Close();
-                dt = gegevens.Tables["Klaas"];
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Kan verbinding niet openen ! ");
-            }
-        }
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -150,6 +113,9 @@ namespace project
             
             stu.Show();
         }
+       
+        //zoekfucntie
+
         string zoekopdracht;
         private void zoekbalk()
         {
@@ -187,6 +153,11 @@ namespace project
         private void Refresh_Click(object sender, EventArgs e)
         {
             Student();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

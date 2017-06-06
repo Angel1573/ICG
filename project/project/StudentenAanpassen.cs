@@ -116,7 +116,8 @@ namespace project
     return dataSet;
 }
 
-       
+       //Opslaan van de toevoeging
+
         private void Opslaan3()
         {
             DataSet myDataSet;
@@ -154,7 +155,53 @@ namespace project
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Weet u zeker dat u dit ITEM wilt verwijderen?",
+                                     "Vewijderen bevestigen!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                verwijderen();
+            }
+            else
+            {
+                this.Hide();
+            }
+        }
+             private void verwijderen()
+        {
+            DataSet myDataSet;
+            string myConnection;
+            string mySelectQuery;
+            string myTableName;
+
+            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            mySelectQuery = ("DELETE * FROM STUDENT WHERE StudentNr = " + Studenten.StudentNr);
+
+            MessageBox.Show(mySelectQuery);
+            OleDbConnection myConn = new OleDbConnection(myConnection);
+            OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
+            myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
+            OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);
+
+            myConn.Open();
+
+            DataSet custDS = new DataSet();
+            myDataAdapter.Fill(custDS);
+            MessageBox.Show(mySelectQuery);
+
+         
+
+            myConn.Close();
+
+
+
+        }
+    }
+
     }
 
     
-}
+

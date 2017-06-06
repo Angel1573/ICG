@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -27,49 +29,49 @@ namespace project
         string Email1;
         string Aantal1;
 
-        private void toevoegen()
-        {
-            
-                StudentNr1 = textBox1.Text;
-                Voornaam1 = textBox2.Text;
-                Achternaam1 = textBox3.Text;
-                KlasCode1 = textBox4.Text;
-                Adres1 = textBox5.Text;
-                Postcode1 = textBox6.Text;
-                Woonplaats1 = textBox7.Text;
-                TelefoonNr1 = textBox8.Text;
-                MobielNr1 = textBox9.Text;
-                Email1 = textBox10.Text;
-                Aantal1 = textBox11.Text;
-                string connetionString;
-                string sql;
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                
-                connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
-                connection = new SqlConnection(connetionString);
-                sql = ("INSERT INTO STUDENT (StudentNr, Voornaam, Achternaam, Klascode, Adres, Postcode, Woonplaats, TelefoonNr, MobielNr, [E-mail], Aantal) VALUES(\"" + StudentNr1 + "\", \"" + Voornaam1 + "\", \"" + Achternaam1 + "\", \"" + KlasCode1 + "\", \"" + Adres1 + "\", \"" + Postcode1 + "\", \"" + Woonplaats1 + "\", \"" + TelefoonNr1 + "\", \"" + MobielNr1 + "\", \"" + Email1 + "\", \"" + Aantal1 + ""); 
-
-                try
-                {
-                    connection.Open();
-                    MessageBox.Show(sql);
-                    adapter.InsertCommand = new SqlCommand(sql, connection);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Row inserted !! ");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            
-
-        }
+        //Persoon toevoegen 
 
         private void Opslaan_Click(object sender, EventArgs e)
         {
-            toevoegen();
+            ToevoegenAanDB();
+            this.Close();
+        }
+
+        private void ToevoegenAanDB()
+        {
+            StudentNr1 = textBox1.Text;
+            Voornaam1 = textBox2.Text;
+            Achternaam1 = textBox3.Text;
+            KlasCode1 = textBox4.Text;
+            Adres1 = textBox5.Text;
+            Postcode1 = textBox6.Text;
+            Woonplaats1 = textBox7.Text;
+            TelefoonNr1 = textBox8.Text;
+            MobielNr1 = textBox9.Text;
+            Email1 = textBox10.Text;
+            Aantal1 = textBox11.Text;
+            try
+            {
+                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+                OleDbConnection conn = new OleDbConnection();
+                conn.ConnectionString = connStr;
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter();
+                adapter.InsertCommand = new OleDbCommand();
+                adapter.InsertCommand.CommandText = ("INSERT INTO STUDENT (StudentNr, Voornaam, Achternaam, Klascode, Adres, Postcode, Woonplaats, TelefoonNr, MobielNr, [E-mail], Aantal) VALUES(\"" + StudentNr1 + "\", \"" + Voornaam1 + "\", \"" + Achternaam1 + "\", \"" + KlasCode1 + "\", \"" + Adres1 + "\", \"" + Postcode1 + "\", \"" + Woonplaats1 + "\", \"" + TelefoonNr1 + "\", \"" + MobielNr1 + "\", \"" + Email1 + "\", \"" + Aantal1 + "\")");
+                conn.Open();
+                adapter.InsertCommand.Connection = conn;
+                adapter.InsertCommand.ExecuteNonQuery();
+            }
+            catch (OleDbException exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
-
 }

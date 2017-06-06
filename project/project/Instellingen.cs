@@ -21,5 +21,12 @@ namespace project
         {
             Application.Exit();
         }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            Hoofdscherm Hfd = new Hoofdscherm();
+            this.Hide();
+            Hfd.Show();
+        }
     }
 }
