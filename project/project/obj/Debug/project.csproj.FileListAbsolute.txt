@@ -25,3 +25,5 @@ C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Instellingen.r
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.StudentenToevoegen.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Docententoevoegen.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.DocentAanpassen.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InstellingenAanpassen.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InstellingToevoegen.resources

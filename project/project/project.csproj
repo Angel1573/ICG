@@ -76,6 +76,18 @@
     <Compile Include="Instellingen.Designer.cs">
       <DependentUpon>Instellingen.cs</DependentUpon>
     </Compile>
+    <Compile Include="InstellingenAanpassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstellingenAanpassen.Designer.cs">
+      <DependentUpon>InstellingenAanpassen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstellingToevoegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstellingToevoegen.Designer.cs">
+      <DependentUpon>InstellingToevoegen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Studenten.cs">
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Instellingen.resx">
       <DependentUpon>Instellingen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstellingenAanpassen.resx">
+      <DependentUpon>InstellingenAanpassen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstellingToevoegen.resx">
+      <DependentUpon>InstellingToevoegen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
