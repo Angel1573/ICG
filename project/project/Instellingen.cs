@@ -15,6 +15,7 @@ namespace project
     {
         public Instellingen()
         {
+            this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
             instellingen();
         }
@@ -77,7 +78,7 @@ namespace project
             Instellingen.ContactNr = row.Cells[5].Value.ToString();
             Instellingen.AantalPlaatsenP1 = row.Cells[6].Value.ToString();
             Instellingen.AantalPlaatsenP2 = row.Cells[7].Value.ToString();
-            
+
             InstellingenAanpassen instAanpassen = new InstellingenAanpassen();
 
             instAanpassen.Show();
@@ -89,5 +90,46 @@ namespace project
 
             InstToevoegen.Show();
         }
+        string zoekopdracht;
+        private void zoekbalk()
+        {
+            zoekopdracht = textBox1.Text;
+
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string sql = ("SELECT * FROM Instelling WHERE InstellingNr LIKE \"%" + zoekopdracht + "%\" OR InstellingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNr LIKE \"%" + zoekopdracht + "%\" OR NaamContact LIKE \"%" + zoekopdracht + "%\" OR ContactNr LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP1 LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP2 LIKE \"%" + zoekopdracht + "%\"");
+            
+            MessageBox.Show(sql);
+            OleDbConnection connection = new OleDbConnection(connetionString);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            DataSet ds = new DataSet();
+            try
+            {
+                connection.Open();
+                dataadapter.Fill(ds, "Zoek");
+                connection.Close();
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "Zoek";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kan verbinding niet openen ! ");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            zoekbalk();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Instellingen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

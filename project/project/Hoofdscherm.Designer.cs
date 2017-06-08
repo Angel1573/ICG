@@ -66,9 +66,9 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 192);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 186);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1008, 541);
+            this.dataGridView1.Size = new System.Drawing.Size(1008, 547);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -228,7 +228,7 @@
             this.Verversen.Name = "Verversen";
             this.Verversen.Size = new System.Drawing.Size(237, 28);
             this.Verversen.TabIndex = 18;
-            this.Verversen.Text = "Verversen";
+            this.Verversen.Text = "Refresh";
             this.Verversen.UseVisualStyleBackColor = false;
             this.Verversen.Click += new System.EventHandler(this.button1_Click_2);
             // 
@@ -377,8 +377,9 @@
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hoofdscherm";
-            this.Text = "Hoofdscherm";
+            this.Text = "HBO-V Stagetool - Hoofdscherm";
             this.Load += new System.EventHandler(this.Hoofdscherm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);

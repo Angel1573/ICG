@@ -255,6 +255,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "InstellingenAanpassen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InstellingenAanpassen";
             this.ResumeLayout(false);
             this.PerformLayout();

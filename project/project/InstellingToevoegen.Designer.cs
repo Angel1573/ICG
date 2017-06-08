@@ -203,6 +203,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "InstellingToevoegen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InstellingToevoegen";
             this.ResumeLayout(false);
             this.PerformLayout();

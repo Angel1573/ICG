@@ -15,7 +15,7 @@ namespace project
         public Hoofdscherm()
         {
             InitializeComponent();
-            this.TopMost = true;
+            //this.TopMost = true;
 
             this.WindowState = FormWindowState.Maximized;
             
