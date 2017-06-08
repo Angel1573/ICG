@@ -16,7 +16,8 @@ namespace project
         public Docententoevoegen()
         {
             InitializeComponent();
-            
+            this.TopMost = true;
+
         }
         string DocentNr1;
         string Voornaam1;
@@ -35,7 +36,7 @@ namespace project
             TelefoonNr1 = textBox5.Text;
             try
             {
-                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
                 OleDbConnection conn = new OleDbConnection();
                 conn.ConnectionString = connStr;
 

@@ -9,6 +9,7 @@ namespace project
         public InstellingToevoegen()
         {
             InitializeComponent();
+            this.TopMost = true;
         }
 
         private void Opslaan_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace project
             AantalPlaatsenP21 = textBox7.Text;
             try
             {
-                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
                 OleDbConnection conn = new OleDbConnection();
                 conn.ConnectionString = connStr;
 

@@ -36,7 +36,7 @@ namespace project
         //Laad alggemeen overzicht van studenten
         public void Docent()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             string sql = ("SELECT * FROM Docent");
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
@@ -61,7 +61,7 @@ namespace project
 
         private void DimFill()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             string sql = ("SELECT * FROM Student");
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
@@ -112,9 +112,8 @@ namespace project
         {
             zoekopdracht = textBox1.Text;
 
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             string sql = ("SELECT * FROM Docent WHERE DocentNr LIKE \"%" + zoekopdracht + "%\" OR Voornaam LIKE \"%" + zoekopdracht + "%\" OR Achternaam LIKE \"%" + zoekopdracht + "%\" OR [E-mail] LIKE \"%" + zoekopdracht + "%\" OR TelefoonNr LIKE \"%" + zoekopdracht + "%\"");
-            MessageBox.Show(sql);
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
             DataSet ds = new DataSet();

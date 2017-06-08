@@ -17,6 +17,7 @@ namespace project
         {
             InitializeComponent();
             change();
+            this.TopMost = true;
         }
         string InstellingNr1;
         string InstellingNaam1;
@@ -63,7 +64,7 @@ namespace project
             AantalPlaatsenP11 = textBox7.Text;
             AantalPlaatsenP21 = textBox8.Text;
 
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             mySelectQuery = ("UPDATE Instelling SET InstellingNaam = \"" + InstellingNaam1 + "\", AfdelingNaam = \"" + AfdelingNaam1 + "\", AfdelingNr = \"" + AfdelingNr1 + "\", NaamContact = \"" + NaamContact1 + "\", ContactNr = \"" + ContactNr1 + "\", AantalPlaatsenP1 = \"" + AantalPlaatsenP11 + "\", AantalPlaatsenP2 = \"" + AantalPlaatsenP21 + "\" WHERE InstellingNr = " + Instellingen.InstellingNr);
             OleDbConnection myConn = new OleDbConnection(myConnection);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
@@ -109,7 +110,7 @@ namespace project
             string mySelectQuery;
             string myTableName;
 
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             mySelectQuery = ("DELETE * FROM INSTELING WHERE InstelingtNr = " + Instellingen.InstellingNr);
 
             MessageBox.Show(mySelectQuery);

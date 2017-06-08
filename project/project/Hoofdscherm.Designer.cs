@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hoofdscherm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Instellingen = new System.Windows.Forms.Button();
-            this.Docenten = new System.Windows.Forms.Button();
-            this.studenten = new System.Windows.Forms.Button();
             this.Jaar2 = new System.Windows.Forms.Button();
             this.Jaar3 = new System.Windows.Forms.Button();
             this.Jaar4 = new System.Windows.Forms.Button();
@@ -44,13 +41,17 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Afsluiten = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Instellingen = new System.Windows.Forms.Button();
+            this.Docenten = new System.Windows.Forms.Button();
+            this.studenten = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,39 +69,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1008, 592);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Instellingen
-            // 
-            this.Instellingen.Image = ((System.Drawing.Image)(resources.GetObject("Instellingen.Image")));
-            this.Instellingen.Location = new System.Drawing.Point(571, 45);
-            this.Instellingen.Name = "Instellingen";
-            this.Instellingen.Size = new System.Drawing.Size(46, 44);
-            this.Instellingen.TabIndex = 7;
-            this.Instellingen.UseVisualStyleBackColor = true;
-            this.Instellingen.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Docenten
-            // 
-            this.Docenten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Docenten.Image = ((System.Drawing.Image)(resources.GetObject("Docenten.Image")));
-            this.Docenten.Location = new System.Drawing.Point(515, 45);
-            this.Docenten.Name = "Docenten";
-            this.Docenten.Size = new System.Drawing.Size(46, 44);
-            this.Docenten.TabIndex = 5;
-            this.Docenten.UseVisualStyleBackColor = true;
-            this.Docenten.Click += new System.EventHandler(this.Docenten_Click);
-            // 
-            // studenten
-            // 
-            this.studenten.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.studenten.BackColor = System.Drawing.Color.Transparent;
-            this.studenten.Image = global::project.Properties.Resources.studenticon3;
-            this.studenten.Location = new System.Drawing.Point(458, 45);
-            this.studenten.Name = "studenten";
-            this.studenten.Size = new System.Drawing.Size(46, 44);
-            this.studenten.TabIndex = 6;
-            this.studenten.UseVisualStyleBackColor = false;
-            this.studenten.Click += new System.EventHandler(this.studenten_Click);
             // 
             // Jaar2
             // 
@@ -163,7 +131,7 @@
             this.flowLayoutPanel2.Controls.Add(this.Deeltijd);
             this.flowLayoutPanel2.Controls.Add(this.Alles);
             this.flowLayoutPanel2.Controls.Add(this.Verversen);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(176, 44);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(176, 36);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(245, 91);
             this.flowLayoutPanel2.TabIndex = 17;
@@ -211,7 +179,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(658, 49);
+            this.textBox1.Location = new System.Drawing.Point(658, 41);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(139, 20);
             this.textBox1.TabIndex = 19;
@@ -222,7 +190,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(658, 76);
+            this.button1.Location = new System.Drawing.Point(658, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 24);
             this.button1.TabIndex = 20;
@@ -240,22 +208,11 @@
             this.Afsluiten.UseVisualStyleBackColor = true;
             this.Afsluiten.Click += new System.EventHandler(this.Afsluiten_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(26, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 93);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(276, 20);
+            this.label1.Location = new System.Drawing.Point(276, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 21);
             this.label1.TabIndex = 24;
@@ -265,7 +222,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 120);
+            this.label2.Location = new System.Drawing.Point(32, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 11);
             this.label2.TabIndex = 25;
@@ -276,7 +233,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
-            this.label4.Location = new System.Drawing.Point(511, 20);
+            this.label4.Location = new System.Drawing.Point(511, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 27;
@@ -286,7 +243,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(453, 90);
+            this.label3.Location = new System.Drawing.Point(453, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 15);
             this.label3.TabIndex = 28;
@@ -296,7 +253,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(515, 91);
+            this.label5.Location = new System.Drawing.Point(515, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 15);
             this.label5.TabIndex = 29;
@@ -306,11 +263,68 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(571, 91);
+            this.label6.Location = new System.Drawing.Point(571, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 30;
             this.label6.Text = "Instelling";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(506, 104);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(63, 24);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Connectie";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Instellingen
+            // 
+            this.Instellingen.Image = ((System.Drawing.Image)(resources.GetObject("Instellingen.Image")));
+            this.Instellingen.Location = new System.Drawing.Point(571, 37);
+            this.Instellingen.Name = "Instellingen";
+            this.Instellingen.Size = new System.Drawing.Size(46, 44);
+            this.Instellingen.TabIndex = 7;
+            this.Instellingen.UseVisualStyleBackColor = true;
+            this.Instellingen.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Docenten
+            // 
+            this.Docenten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Docenten.Image = ((System.Drawing.Image)(resources.GetObject("Docenten.Image")));
+            this.Docenten.Location = new System.Drawing.Point(515, 37);
+            this.Docenten.Name = "Docenten";
+            this.Docenten.Size = new System.Drawing.Size(46, 44);
+            this.Docenten.TabIndex = 5;
+            this.Docenten.UseVisualStyleBackColor = true;
+            this.Docenten.Click += new System.EventHandler(this.Docenten_Click);
+            // 
+            // studenten
+            // 
+            this.studenten.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.studenten.BackColor = System.Drawing.Color.Transparent;
+            this.studenten.Image = global::project.Properties.Resources.studenticon3;
+            this.studenten.Location = new System.Drawing.Point(458, 37);
+            this.studenten.Name = "studenten";
+            this.studenten.Size = new System.Drawing.Size(46, 44);
+            this.studenten.TabIndex = 6;
+            this.studenten.UseVisualStyleBackColor = false;
+            this.studenten.Click += new System.EventHandler(this.studenten_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(26, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Hoofdscherm
             // 
@@ -318,6 +332,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 733);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -368,6 +383,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Jaar1;
         private System.Windows.Forms.Button Alles;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -135,7 +135,7 @@ namespace project
             MobielNr1 = textBox9.Text;
             Email1 = textBox10.Text;
             Aantal1 = textBox11.Text;
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             mySelectQuery = ("UPDATE STUDENT SET StudentNr = \"" + StudentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achternaam1 + "\", KlasCode = \"" + KlasCode1 + "\", Adres = \"" + Adres1 + "\", Postcode = \"" + Postcode1 + "\", Woonplaats = \"" + Woonplaats1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\", MobielNr = \"" + MobielNr1 + "\", [E-mail] = \"" + Email1 + "\", Aantal = \"" + Aantal1 + "\" WHERE StudentNr = " + Studenten.StudentNr);
             OleDbConnection myConn = new OleDbConnection(myConnection);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
@@ -177,7 +177,7 @@ namespace project
             string mySelectQuery;
             string myTableName;
 
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             mySelectQuery = ("DELETE * FROM STUDENT WHERE StudentNr = " + Studenten.StudentNr);
 
             MessageBox.Show(mySelectQuery);

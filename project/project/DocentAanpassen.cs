@@ -17,6 +17,7 @@ namespace project
         {
             InitializeComponent();
             change();
+            this.TopMost = true;
         }
         string DocentNr1;
         string Voornaam1;
@@ -44,7 +45,7 @@ namespace project
         private void Opslaan3()
         {
             DataSet myDataSet;
-            string myConnection;
+            
             string mySelectQuery;
             string myTableName;
 
@@ -54,10 +55,10 @@ namespace project
             Email1 = textBox4.Text;
             TelefoonNr1 = textBox5.Text;
 
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             mySelectQuery = ("UPDATE DOCENT SET DocentNr = \"" + DocentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achterternaam1 + "\", [E-mail] = \"" + Email1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\" WHERE DocentNr = " + Docenten.DocentNr);
             MessageBox.Show(mySelectQuery);
-            OleDbConnection myConn = new OleDbConnection(myConnection);
+            OleDbConnection myConn = new OleDbConnection(connetionString);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
             myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
             OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);
@@ -103,7 +104,7 @@ namespace project
             string mySelectQuery;
             string myTableName;
             
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             mySelectQuery = ("DELETE * FROM DOCENT WHERE DocentNr = " + Docenten.DocentNr);
 
             MessageBox.Show(mySelectQuery);

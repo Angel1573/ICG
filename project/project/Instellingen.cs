@@ -38,7 +38,7 @@ namespace project
         }
         public void instellingen()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             string sql = ("SELECT * FROM Instelling");
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
@@ -95,10 +95,8 @@ namespace project
         {
             zoekopdracht = textBox1.Text;
 
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             string sql = ("SELECT * FROM Instelling WHERE InstellingNr LIKE \"%" + zoekopdracht + "%\" OR InstellingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNr LIKE \"%" + zoekopdracht + "%\" OR NaamContact LIKE \"%" + zoekopdracht + "%\" OR ContactNr LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP1 LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP2 LIKE \"%" + zoekopdracht + "%\"");
-            
-            MessageBox.Show(sql);
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
             DataSet ds = new DataSet();

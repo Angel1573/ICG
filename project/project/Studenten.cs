@@ -61,7 +61,7 @@ namespace project
         //Laad alggemeen overzicht van studenten
         public void Student()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             string sql = ("SELECT * FROM Student");
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
@@ -122,10 +122,8 @@ namespace project
         {
             zoekopdracht = textBox1.Text;
 
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
             string sql = ("SELECT * FROM Student WHERE StudentNr LIKE \"%" + zoekopdracht + "%\" OR Voornaam LIKE \"%" + zoekopdracht + "%\" OR Achternaam LIKE \"%" + zoekopdracht + "%\" OR Klascode LIKE \"%" + zoekopdracht + "%\" OR Adres LIKE \"%" + zoekopdracht + "%\" OR Postcode LIKE \"%" + zoekopdracht + "%\" OR Woonplaats LIKE \"%" + zoekopdracht + "%\" OR TelefoonNr LIKE \"%" + zoekopdracht + "%\" OR MobielNr LIKE \"%" + zoekopdracht + "%\"");
-            
-            MessageBox.Show(sql);
             OleDbConnection connection = new OleDbConnection(connetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
             DataSet ds = new DataSet();

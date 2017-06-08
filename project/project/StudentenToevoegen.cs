@@ -11,6 +11,7 @@ namespace project
         public StudentenToevoegen()
         {
             InitializeComponent();
+            this.TopMost = true;
         }
 
         private void StudentenToevoegen_Load(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace project
             Aantal1 = textBox11.Text;
             try
             {
-                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
                 OleDbConnection conn = new OleDbConnection();
                 conn.ConnectionString = connStr;
 
