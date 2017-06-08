@@ -49,21 +49,7 @@ namespace project
         int functie3;
         private void stagelocatiestudenten_Click(object sender, EventArgs e)
         {
-            if (functie3 == 0)
-            {
-                stagelocatiestudenten.BackColor = Color.Green;
-                functie3 = 1;
-                functie2 = 0;
-                functie1 = 0;
-                overzichtinstellingen.BackColor = Color.White;
-                Refresh.BackColor = Color.White;
-                stagelocatiestudenten_Click(sender, e);
-            }
-            else
-            {
-
-                stagelocatie();
-            }
+            
         }
 
         //Knop Jaar 1
@@ -80,6 +66,7 @@ namespace project
                 Knopjr1 = 1;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
             else
             {
@@ -89,6 +76,7 @@ namespace project
                 Knopjr1 = 0;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
         }
 
@@ -106,6 +94,7 @@ namespace project
                 Knopjr2 = 2;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
             else
             {
@@ -115,6 +104,7 @@ namespace project
                 Knopjr2 = 0;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
         }
 
@@ -132,6 +122,7 @@ namespace project
                 Knopjr3 = 3;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
             else
             {
@@ -141,6 +132,7 @@ namespace project
                 Knopjr3 = 0;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
         }
 
@@ -158,6 +150,7 @@ namespace project
                 Knopjr4 = 4;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
             else
             {
@@ -167,6 +160,7 @@ namespace project
                 Knopjr4 = 0;
                 if (Allen == 1)
                 { allesgeselecteerd(); }
+                AlgemeenOverzicht();
             }
         }
 
@@ -182,6 +176,7 @@ namespace project
                 Deeltijd.ForeColor = Color.White;
                 tijd = 1;
                 JaarDeel = 5;
+                AlgemeenOverzicht();
             }
             else
             {
@@ -189,6 +184,7 @@ namespace project
                 Deeltijd.ForeColor = Color.Black;
                 tijd = 0;
                 JaarDeel = 0;
+                AlgemeenOverzicht();
             }
         }
         //Alle jaren Knop
@@ -226,6 +222,7 @@ namespace project
                 Jaar1.ForeColor = Color.White;
                 een = 1;
                 Knopjr1 = 1;
+                AlgemeenOverzicht();
             }
             else
             {
@@ -252,6 +249,7 @@ namespace project
                 Deeltijd.ForeColor = Color.Black;
                 tijd = 0;
                 JaarDeel = 0;
+                AlgemeenOverzicht();
             }
         } 
 
@@ -283,21 +281,7 @@ namespace project
 
         private void Refresh_Click_1(object sender, object e)
         {
-            if (functie1 == 0)
-            {
-                Refresh.BackColor = Color.Green;
-                functie1 = 1;
-                functie2 = 0;
-                functie3 = 0;
-                overzichtinstellingen.BackColor = Color.White;
-                stagelocatiestudenten.BackColor = Color.White;
-                Refresh_Click_1(sender, e);
-
-            }
-            else
-            {
-                AlgemeenOverzicht();
-            }
+           
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -305,44 +289,12 @@ namespace project
 
         }
 
-        //Overzicht van de instellingen
+        
 
-        int functie2;
-        private void overzichtinstellingen_Click(object sender, EventArgs e)
-        {
-            if (functie2 == 0)
-            {
-                overzichtinstellingen.BackColor = Color.Green;
-                functie2 = 1;
-                functie1 = 0;
-                functie3 = 0;
-                Refresh.BackColor = Color.White;
-                stagelocatiestudenten.BackColor = Color.White;
-                overzichtinstellingen_Click(sender, e);
-
-            }
-            else
-            {
-                Bedrijven();
-            }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button1_Click_2(object sender, EventArgs e)
         {
-            if (functie1 == 1) { Refresh_Click_1(sender, e); }
-            else
-            {
-                if (functie2 == 1) { overzichtinstellingen_Click(sender, e); }
-                else
-                { if (functie3 == 1) { stagelocatiestudenten_Click(sender, e); } else { geenoptie(); } }
-
-            }
-            
+            AlgemeenOverzicht();
         }
         private void geenoptie()
         { MessageBox.Show("Seleceer een optie"); }
@@ -441,10 +393,6 @@ namespace project
             {
                 MessageBox.Show("Kan verbinding niet openen ! ");
             }
-
-
-
-
 
         }
 

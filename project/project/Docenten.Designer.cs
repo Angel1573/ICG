@@ -46,7 +46,7 @@
             this.Refresh.BackColor = System.Drawing.Color.DarkSlateGray;
             this.Refresh.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
             this.Refresh.ForeColor = System.Drawing.Color.White;
-            this.Refresh.Location = new System.Drawing.Point(139, 79);
+            this.Refresh.Location = new System.Drawing.Point(139, 75);
             this.Refresh.Name = "Refresh";
             this.Refresh.Size = new System.Drawing.Size(117, 26);
             this.Refresh.TabIndex = 28;
@@ -59,7 +59,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(297, 66);
+            this.button2.Location = new System.Drawing.Point(297, 62);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 24);
             this.button2.TabIndex = 27;
@@ -72,7 +72,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(139, 40);
+            this.button1.Location = new System.Drawing.Point(139, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 33);
             this.button1.TabIndex = 26;
@@ -82,22 +82,24 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(297, 40);
+            this.textBox1.Location = new System.Drawing.Point(297, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(162, 20);
             this.textBox1.TabIndex = 25;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 133);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 124);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(941, 368);
+            this.dataGridView1.Size = new System.Drawing.Size(941, 377);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
@@ -106,7 +108,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 16);
+            this.label1.Location = new System.Drawing.Point(147, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 29;
@@ -129,7 +131,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

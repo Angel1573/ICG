@@ -33,8 +33,6 @@
             this.Instellingen = new System.Windows.Forms.Button();
             this.Docenten = new System.Windows.Forms.Button();
             this.studenten = new System.Windows.Forms.Button();
-            this.overzichtinstellingen = new System.Windows.Forms.Button();
-            this.stagelocatiestudenten = new System.Windows.Forms.Button();
             this.Jaar2 = new System.Windows.Forms.Button();
             this.Jaar3 = new System.Windows.Forms.Button();
             this.Jaar4 = new System.Windows.Forms.Button();
@@ -43,8 +41,6 @@
             this.Jaar1 = new System.Windows.Forms.Button();
             this.Alles = new System.Windows.Forms.Button();
             this.Verversen = new System.Windows.Forms.Button();
-            this.Refresh = new System.Windows.Forms.Button();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Afsluiten = new System.Windows.Forms.Button();
@@ -57,18 +53,19 @@
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 186);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 141);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1008, 547);
+            this.dataGridView1.Size = new System.Drawing.Size(1008, 592);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -104,26 +101,6 @@
             this.studenten.TabIndex = 6;
             this.studenten.UseVisualStyleBackColor = false;
             this.studenten.Click += new System.EventHandler(this.studenten_Click);
-            // 
-            // overzichtinstellingen
-            // 
-            this.overzichtinstellingen.Location = new System.Drawing.Point(3, 32);
-            this.overzichtinstellingen.Name = "overzichtinstellingen";
-            this.overzichtinstellingen.Size = new System.Drawing.Size(128, 23);
-            this.overzichtinstellingen.TabIndex = 10;
-            this.overzichtinstellingen.Text = "Overzicht per instelling";
-            this.overzichtinstellingen.UseVisualStyleBackColor = true;
-            this.overzichtinstellingen.Click += new System.EventHandler(this.overzichtinstellingen_Click);
-            // 
-            // stagelocatiestudenten
-            // 
-            this.stagelocatiestudenten.Location = new System.Drawing.Point(3, 3);
-            this.stagelocatiestudenten.Name = "stagelocatiestudenten";
-            this.stagelocatiestudenten.Size = new System.Drawing.Size(128, 23);
-            this.stagelocatiestudenten.TabIndex = 11;
-            this.stagelocatiestudenten.Text = "per student waar stage gelopen, begeleiding";
-            this.stagelocatiestudenten.UseVisualStyleBackColor = true;
-            this.stagelocatiestudenten.Click += new System.EventHandler(this.stagelocatiestudenten_Click);
             // 
             // Jaar2
             // 
@@ -231,26 +208,6 @@
             this.Verversen.Text = "Refresh";
             this.Verversen.UseVisualStyleBackColor = false;
             this.Verversen.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // Refresh
-            // 
-            this.Refresh.Location = new System.Drawing.Point(3, 61);
-            this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(128, 23);
-            this.Refresh.TabIndex = 17;
-            this.Refresh.Text = "Algemeen";
-            this.Refresh.UseVisualStyleBackColor = true;
-            this.Refresh.Click += new System.EventHandler(this.Refresh_Click_1);
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.stagelocatiestudenten);
-            this.flowLayoutPanel3.Controls.Add(this.overzichtinstellingen);
-            this.flowLayoutPanel3.Controls.Add(this.Refresh);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(852, 49);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(134, 91);
-            this.flowLayoutPanel3.TabIndex = 18;
             // 
             // textBox1
             // 
@@ -374,7 +331,6 @@
             this.Controls.Add(this.Afsluiten);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -383,7 +339,6 @@
             this.Load += new System.EventHandler(this.Hoofdscherm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -393,15 +348,11 @@
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Instellingen;
-        private System.Windows.Forms.Button overzichtinstellingen;
-        private System.Windows.Forms.Button stagelocatiestudenten;
         private System.Windows.Forms.Button Jaar2;
         private System.Windows.Forms.Button Jaar3;
         private System.Windows.Forms.Button Jaar4;
         private System.Windows.Forms.Button Deeltijd;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button Refresh;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button Verversen;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
