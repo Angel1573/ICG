@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstellingenAanpassen));
             this.label11 = new System.Windows.Forms.Label();
             this.Verwijderen = new System.Windows.Forms.Button();
             this.Opslaan = new System.Windows.Forms.Button();
@@ -254,6 +255,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InstellingenAanpassen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InstellingenAanpassen";

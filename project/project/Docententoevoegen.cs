@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project
@@ -36,10 +29,8 @@ namespace project
             TelefoonNr1 = textBox5.Text;
             try
             {
-                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
                 OleDbConnection conn = new OleDbConnection();
-                conn.ConnectionString = connStr;
-
+                conn.ConnectionString = DatabaseConnectie.DatabaseLokatie;
                 OleDbDataAdapter adapter = new OleDbDataAdapter();
                 adapter.InsertCommand = new OleDbCommand();
                 adapter.InsertCommand.CommandText = ("INSERT INTO DOCENT (DocentNr, Voornaam, Achternaam, [E-mail], TelefoonNr) VALUES(\"" + DocentNr1 + "\", \"" + Voornaam1 + "\", \"" + Achterternaam1 + "\", \"" + Email1 + "\", \"" + TelefoonNr1 + "\")");

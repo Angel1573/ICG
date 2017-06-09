@@ -87,42 +87,11 @@ namespace project
         }
 
 
-        static public DataSet CreateCommandAndUpdate(
-    string connectionString,
-    string sql)
-
-{
-    DataSet dataSet = new DataSet();
-
-    using (OleDbConnection connection = new OleDbConnection(connectionString))
-    {
-               
-        connection.Open();
-        OleDbDataAdapter adapter =
-            new OleDbDataAdapter();
-        adapter.SelectCommand =
-            new OleDbCommand(sql, connection);
-        OleDbCommandBuilder builder =
-            new OleDbCommandBuilder(adapter);
-
-        adapter.Fill(dataSet);
-
-        // Code to modify data in the DataSet here.
-
-        // Without the OleDbCommandBuilder, this line would fail.
-        adapter.UpdateCommand = builder.GetUpdateCommand();
-        adapter.Update(dataSet);
-    }
-    return dataSet;
-}
-
-       //Opslaan van de toevoeging
-
         private void Opslaan3()
         {
             DataSet myDataSet;
             string myConnection;
-            string mySelectQuery;
+            string Query;
             string myTableName;
             StudentNr1 = textBox1.Text;
             Voornaam1 = textBox2.Text;
@@ -135,25 +104,15 @@ namespace project
             MobielNr1 = textBox9.Text;
             Email1 = textBox10.Text;
             Aantal1 = textBox11.Text;
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            mySelectQuery = ("UPDATE STUDENT SET StudentNr = \"" + StudentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achternaam1 + "\", KlasCode = \"" + KlasCode1 + "\", Adres = \"" + Adres1 + "\", Postcode = \"" + Postcode1 + "\", Woonplaats = \"" + Woonplaats1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\", MobielNr = \"" + MobielNr1 + "\", [E-mail] = \"" + Email1 + "\", Aantal = \"" + Aantal1 + "\" WHERE StudentNr = " + Studenten.StudentNr);
-            OleDbConnection myConn = new OleDbConnection(myConnection);
+            Query = ("UPDATE STUDENT SET StudentNr = \"" + StudentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achternaam1 + "\", KlasCode = \"" + KlasCode1 + "\", Adres = \"" + Adres1 + "\", Postcode = \"" + Postcode1 + "\", Woonplaats = \"" + Woonplaats1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\", MobielNr = \"" + MobielNr1 + "\", [E-mail] = \"" + Email1 + "\", Aantal = \"" + Aantal1 + "\" WHERE StudentNr = " + Studenten.StudentNr);
+            OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
-            myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
+            myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
             OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);
-
             myConn.Open();
-
             DataSet custDS = new DataSet();
             myDataAdapter.Fill(custDS);
-            MessageBox.Show(mySelectQuery);
-
-            //myDataAdapter.Update(custDS, "taart");
-
             myConn.Close();
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -172,16 +131,13 @@ namespace project
         }
              private void verwijderen()
         {
-            DataSet myDataSet;
-            string myConnection;
+           
             string mySelectQuery;
-            string myTableName;
-
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
+           
             mySelectQuery = ("DELETE * FROM STUDENT WHERE StudentNr = " + Studenten.StudentNr);
 
             MessageBox.Show(mySelectQuery);
-            OleDbConnection myConn = new OleDbConnection(myConnection);
+            OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
             myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
             OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project
@@ -38,10 +32,9 @@ namespace project
         }
         public void instellingen()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            string sql = ("SELECT * FROM Instelling");
-            OleDbConnection connection = new OleDbConnection(connetionString);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            string Query = ("SELECT * FROM Instelling");
+            OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
             DataSet ds = new DataSet();
             try
             {
@@ -94,11 +87,9 @@ namespace project
         private void zoekbalk()
         {
             zoekopdracht = textBox1.Text;
-
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            string sql = ("SELECT * FROM Instelling WHERE InstellingNr LIKE \"%" + zoekopdracht + "%\" OR InstellingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNr LIKE \"%" + zoekopdracht + "%\" OR NaamContact LIKE \"%" + zoekopdracht + "%\" OR ContactNr LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP1 LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP2 LIKE \"%" + zoekopdracht + "%\"");
-            OleDbConnection connection = new OleDbConnection(connetionString);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            string Query = ("SELECT * FROM Instelling WHERE InstellingNr LIKE \"%" + zoekopdracht + "%\" OR InstellingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNaam LIKE \"%" + zoekopdracht + "%\" OR AfdelingNr LIKE \"%" + zoekopdracht + "%\" OR NaamContact LIKE \"%" + zoekopdracht + "%\" OR ContactNr LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP1 LIKE \"%" + zoekopdracht + "%\" OR AantalPlaatsenP2 LIKE \"%" + zoekopdracht + "%\"");
+            OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
             DataSet ds = new DataSet();
             try
             {

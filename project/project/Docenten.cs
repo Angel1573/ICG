@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project
@@ -36,10 +30,9 @@ namespace project
         //Laad alggemeen overzicht van studenten
         public void Docent()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            string sql = ("SELECT * FROM Docent");
-            OleDbConnection connection = new OleDbConnection(connetionString);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            string Query = ("SELECT * FROM Docent");
+            OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
             DataSet ds = new DataSet();
             try
             {
@@ -54,34 +47,7 @@ namespace project
                 MessageBox.Show("Kan verbinding niet openen ! ");
             }
         }
-        //private void zoeken()
-
-
-
-
-        private void DimFill()
-        {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            string sql = ("SELECT * FROM Student");
-            OleDbConnection connection = new OleDbConnection(connetionString);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
-            DataSet gegevens = new DataSet();
-            DataTable dt = new DataTable();
-            try
-            {
-                connection.Open();
-                dataadapter.Fill(gegevens, "lijst");
-                connection.Close();
-                dt = gegevens.Tables["Klaas"];
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Kan verbinding niet openen ! ");
-            }
-        }
-
-
+        
 
         private void Afsluiten_Click(object sender, EventArgs e)
         {
@@ -111,11 +77,9 @@ namespace project
         private void zoekbalk()
         {
             zoekopdracht = textBox1.Text;
-
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            string sql = ("SELECT * FROM Docent WHERE DocentNr LIKE \"%" + zoekopdracht + "%\" OR Voornaam LIKE \"%" + zoekopdracht + "%\" OR Achternaam LIKE \"%" + zoekopdracht + "%\" OR [E-mail] LIKE \"%" + zoekopdracht + "%\" OR TelefoonNr LIKE \"%" + zoekopdracht + "%\"");
-            OleDbConnection connection = new OleDbConnection(connetionString);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
+            string Query = ("SELECT * FROM Docent WHERE DocentNr LIKE \"%" + zoekopdracht + "%\" OR Voornaam LIKE \"%" + zoekopdracht + "%\" OR Achternaam LIKE \"%" + zoekopdracht + "%\" OR [E-mail] LIKE \"%" + zoekopdracht + "%\" OR TelefoonNr LIKE \"%" + zoekopdracht + "%\"");
+            OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
             DataSet ds = new DataSet();
             try
             {

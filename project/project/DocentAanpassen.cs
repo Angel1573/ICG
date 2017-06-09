@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project
@@ -16,6 +10,7 @@ namespace project
         public DocentAanpassen()
         {
             InitializeComponent();
+            
             change();
             this.TopMost = true;
         }
@@ -46,7 +41,7 @@ namespace project
         {
             DataSet myDataSet;
             
-            string mySelectQuery;
+            string Query;
             string myTableName;
 
             DocentNr1 = textBox1.Text;
@@ -54,22 +49,18 @@ namespace project
             Achterternaam1 = textBox3.Text;
             Email1 = textBox4.Text;
             TelefoonNr1 = textBox5.Text;
-
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            mySelectQuery = ("UPDATE DOCENT SET DocentNr = \"" + DocentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achterternaam1 + "\", [E-mail] = \"" + Email1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\" WHERE DocentNr = " + Docenten.DocentNr);
-            MessageBox.Show(mySelectQuery);
-            OleDbConnection myConn = new OleDbConnection(connetionString);
+            Query = ("UPDATE DOCENT SET DocentNr = \"" + DocentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achterternaam1 + "\", [E-mail] = \"" + Email1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\" WHERE DocentNr = " + Docenten.DocentNr);
+            MessageBox.Show(Query);
+            OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
-            myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
+            myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
             OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);
 
             myConn.Open();
 
             DataSet custDS = new DataSet();
             myDataAdapter.Fill(custDS);
-            MessageBox.Show(mySelectQuery);
-
-            //myDataAdapter.Update(custDS, "taart");
+           
 
             myConn.Close();
 
@@ -99,27 +90,24 @@ namespace project
         }
         private void verwijderen()
         {
-            DataSet myDataSet;
-            string myConnection;
-            string mySelectQuery;
-            string myTableName;
+            //DataSet myDataSet;
+           // string myConnection;
+            string Query;
+            //string myTableName;
             
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            mySelectQuery = ("DELETE * FROM DOCENT WHERE DocentNr = " + Docenten.DocentNr);
-
-            MessageBox.Show(mySelectQuery);
-            OleDbConnection myConn = new OleDbConnection(myConnection);
+            
+            Query = ("DELETE * FROM DOCENT WHERE DocentNr = " + Docenten.DocentNr);
+            MessageBox.Show(Query);
+            OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
-            myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
+            myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
             OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);
 
             myConn.Open();
 
             DataSet custDS = new DataSet();
             myDataAdapter.Fill(custDS);
-            MessageBox.Show(mySelectQuery);
-
-            //myDataAdapter.Update(custDS, "taart");
+            MessageBox.Show(Query);
 
             myConn.Close();
 

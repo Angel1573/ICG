@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstellingToevoegen));
             this.label11 = new System.Windows.Forms.Label();
             this.Opslaan = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@
             this.Opslaan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.Opslaan.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Opslaan.ForeColor = System.Drawing.Color.White;
-            this.Opslaan.Location = new System.Drawing.Point(153, 243);
+            this.Opslaan.Location = new System.Drawing.Point(234, 239);
             this.Opslaan.Name = "Opslaan";
             this.Opslaan.Size = new System.Drawing.Size(103, 42);
             this.Opslaan.TabIndex = 67;
@@ -202,6 +203,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InstellingToevoegen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InstellingToevoegen";

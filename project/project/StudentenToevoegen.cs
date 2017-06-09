@@ -53,9 +53,9 @@ namespace project
             Aantal1 = textBox11.Text;
             try
             {
-                string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
+                
                 OleDbConnection conn = new OleDbConnection();
-                conn.ConnectionString = connStr;
+                conn.ConnectionString = DatabaseConnectie.DatabaseLokatie;
 
                 OleDbDataAdapter adapter = new OleDbDataAdapter();
                 adapter.InsertCommand = new OleDbCommand();

@@ -10,12 +10,11 @@ namespace project
         public DatabaseConnectie()
         {
             InitializeComponent();
-            //textBox1.Text = Connectie;
+            textBox1.Text = DatabaseLokatie;
             this.TopMost = true;
         }
         string proef;
-        public static string Connectie = "C:/Users/Gerbrand/Desktop/Database.accdb";
-
+        public static string DatabaseLokatie = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
         private void button1_Click(object sender, EventArgs e)
         {
             proef = textBox1.Text;
@@ -23,10 +22,9 @@ namespace project
         }
         public void Proef()
         {
-            string connetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + proef + "";
-            MessageBox.Show(connetionString);
+            string ProefconnetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + proef + "";
             string sql = ("SELECT * FROM Instelling");
-            OleDbConnection connection = new OleDbConnection(connetionString);
+            OleDbConnection connection = new OleDbConnection(ProefconnetionString);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(sql, connection);
             DataSet ds = new DataSet();
             try
@@ -39,7 +37,8 @@ namespace project
                                     MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    DatabaseConnectie.Connectie = proef;
+                    DatabaseConnectie.DatabaseLokatie = ProefconnetionString;
+                    this.Hide();
                 }
                 else
                 {
@@ -50,6 +49,11 @@ namespace project
             {
                 MessageBox.Show("Kan verbinding niet openen ! ");
             }
+        }
+
+        private void DatabaseConnectie_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

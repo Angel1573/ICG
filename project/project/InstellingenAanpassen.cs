@@ -51,10 +51,9 @@ namespace project
         }
         private void Opslaan5()
         {
-            DataSet myDataSet;
-            string myConnection;
-            string mySelectQuery;
-            string myTableName;
+            
+            string Query;
+            
             InstellingNr1 = textBox1.Text;
             InstellingNaam1 = textBox2.Text;
             AfdelingNaam1 = textBox3.Text;
@@ -64,20 +63,17 @@ namespace project
             AantalPlaatsenP11 = textBox7.Text;
             AantalPlaatsenP21 = textBox8.Text;
 
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            mySelectQuery = ("UPDATE Instelling SET InstellingNaam = \"" + InstellingNaam1 + "\", AfdelingNaam = \"" + AfdelingNaam1 + "\", AfdelingNr = \"" + AfdelingNr1 + "\", NaamContact = \"" + NaamContact1 + "\", ContactNr = \"" + ContactNr1 + "\", AantalPlaatsenP1 = \"" + AantalPlaatsenP11 + "\", AantalPlaatsenP2 = \"" + AantalPlaatsenP21 + "\" WHERE InstellingNr = " + Instellingen.InstellingNr);
-            OleDbConnection myConn = new OleDbConnection(myConnection);
+            Query = ("UPDATE Instelling SET InstellingNaam = \"" + InstellingNaam1 + "\", AfdelingNaam = \"" + AfdelingNaam1 + "\", AfdelingNr = \"" + AfdelingNr1 + "\", NaamContact = \"" + NaamContact1 + "\", ContactNr = \"" + ContactNr1 + "\", AantalPlaatsenP1 = \"" + AantalPlaatsenP11 + "\", AantalPlaatsenP2 = \"" + AantalPlaatsenP21 + "\" WHERE InstellingNr = " + Instellingen.InstellingNr);
+            OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
-            myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
+            myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
             OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);
 
             myConn.Open();
 
             DataSet custDS = new DataSet();
             myDataAdapter.Fill(custDS);
-            MessageBox.Show(mySelectQuery);
-
-            //myDataAdapter.Update(custDS, "taart");
+           
 
             myConn.Close();
 
@@ -105,28 +101,23 @@ namespace project
         private void verwijderen()
 
         {
-            DataSet myDataSet;
-            string myConnection;
-            string mySelectQuery;
-            string myTableName;
+          
+            string Query;
+            
 
-            myConnection = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + DatabaseConnectie.Connectie + "";
-            mySelectQuery = ("DELETE * FROM INSTELING WHERE InstelingtNr = " + Instellingen.InstellingNr);
+            
+            Query = ("DELETE * FROM INSTELING WHERE InstelingtNr = " + Instellingen.InstellingNr);
 
-            MessageBox.Show(mySelectQuery);
-            OleDbConnection myConn = new OleDbConnection(myConnection);
+            MessageBox.Show(Query);
+            OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
-            myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);
+            myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
             OleDbCommandBuilder custCB = new OleDbCommandBuilder(myDataAdapter);
 
             myConn.Open();
 
             DataSet custDS = new DataSet();
             myDataAdapter.Fill(custDS);
-            MessageBox.Show(mySelectQuery);
-
-
-
             myConn.Close();
 
 
