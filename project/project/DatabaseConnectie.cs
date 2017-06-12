@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
+
 namespace project
 {
     public partial class DatabaseConnectie : Form
@@ -10,15 +11,17 @@ namespace project
         public DatabaseConnectie()
         {
             InitializeComponent();
-            textBox1.Text = DatabaseLokatie;
+            textBox1.Text = Properties.Settings.Default.DatabaseInstelling;
             this.TopMost = true;
         }
         string proef;
-        public static string DatabaseLokatie = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:/Users/Gerbrand/Desktop/Database.accdb";
+        public static string DatabaseLokatie = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + Properties.Settings.Default.DatabaseInstelling + "";
+
         private void button1_Click(object sender, EventArgs e)
         {
             proef = textBox1.Text;
             Proef();
+            
         }
         public void Proef()
         {
@@ -37,7 +40,9 @@ namespace project
                                     MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    DatabaseConnectie.DatabaseLokatie = ProefconnetionString;
+                    Properties.Settings.Default.DatabaseInstelling = proef;
+                    Properties.Settings.Default.Save();
+                    DatabaseLokatie = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + Properties.Settings.Default.DatabaseInstelling + "";
                     this.Hide();
                 }
                 else
@@ -54,6 +59,11 @@ namespace project
         private void DatabaseConnectie_Load(object sender, EventArgs e)
         {
 
+        }
+        string testing;
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
