@@ -18,6 +18,8 @@ namespace project
             InitializeComponent();
             change();
             this.TopMost = true;
+
+            //Lokale Dims
         }
         string InstellingNr1;
         string InstellingNaam1;
@@ -33,11 +35,14 @@ namespace project
 
         }
 
+        //Voert de opslaan functie uit
         private void Opslaan_Click(object sender, EventArgs e)
         {
             Opslaan5();
             this.Hide();
         }
+
+        //Laad de info in de textboxen
         public void change()
         {
             textBox1.Text = Instellingen.InstellingNr;
@@ -49,6 +54,8 @@ namespace project
             textBox7.Text = Instellingen.AantalPlaatsenP1;
             textBox8.Text = Instellingen.AantalPlaatsenP2;
         }
+
+        //Slaat de door de gebruiker ingevoerde gegevens op
         private void Opslaan5()
         {
             
@@ -81,6 +88,7 @@ namespace project
 
         }
 
+        //Vraagt de gebruiker of deze zeker weet dat deze de record wil verijderen
         private void Verwijderen_Click(object sender, EventArgs e)
         {
             {
@@ -98,6 +106,7 @@ namespace project
             }
         }
 
+        //Verwijderd de record uit de database
         private void verwijderen()
 
         {

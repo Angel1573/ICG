@@ -13,6 +13,7 @@ namespace project
             InitializeComponent();
             Docent();
         }
+        //Programmabreede Dims
         public static string DocentNr;
         public static string Voornaam;
         public static string Achternaam;
@@ -27,6 +28,7 @@ namespace project
         {
 
         }
+        
         //Laad alggemeen overzicht van studenten
         public void Docent()
         {
@@ -48,12 +50,13 @@ namespace project
             }
         }
         
-
+        //Afsluitknop
         private void Afsluiten_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Thuisknop
         private void Home_Click(object sender, EventArgs e)
         {
             Hoofdscherm Hfd = new Hoofdscherm();
@@ -65,7 +68,8 @@ namespace project
         {
 
         }
-
+        
+        //Afsluitknop
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -95,17 +99,19 @@ namespace project
             }
         }
 
+        //Zoekknop
         private void button2_Click(object sender, EventArgs e)
         {
             zoekbalk();
         }
 
+        //Refresh knop die het overzicht opniew kan laden
         private void Refresh_Click(object sender, EventArgs e)
         {
             Docent();
         }
 
-
+        //Docenttoevoegen, laat het toevoescherm zien
         private void button1_Click_1(object sender, EventArgs e)
         {
             Docententoevoegen DocToe = new Docententoevoegen();
@@ -113,6 +119,7 @@ namespace project
             DocToe.Show();
         }
 
+        //Homeknop
         private void Home_Click_1(object sender, EventArgs e)
         {
             Hoofdscherm Hfd = new Hoofdscherm();
@@ -125,6 +132,7 @@ namespace project
             Docent();
         }
 
+        //Bekijkt welke row in de datagridview is aangeklikt en slaat deze vervolgens op en opende het bewerkingsvenster
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -143,6 +151,7 @@ namespace project
 
         }
 
+        //Voert zoekopdracht uit
         private void button2_Click_1(object sender, EventArgs e)
         {
             zoekbalk();

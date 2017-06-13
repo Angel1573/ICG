@@ -12,10 +12,13 @@ namespace project
             this.TopMost = true;
         }
 
+        //Voer de opslaan functie uit
         private void Opslaan_Click(object sender, EventArgs e)
         {
             ToevoegenAanDB();
         }
+
+        //Slaat de door de gebruiker ingevoerde informatie op
         private void ToevoegenAanDB()
         {
             

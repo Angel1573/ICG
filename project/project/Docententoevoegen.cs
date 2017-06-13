@@ -12,6 +12,8 @@ namespace project
             this.TopMost = true;
 
         }
+
+        //Lokale DIms
         string DocentNr1;
         string Voornaam1;
         string Achterternaam1;
@@ -19,7 +21,7 @@ namespace project
         string TelefoonNr1;
 
        
-
+        //Voegt de record toe aan de Database
         private void ToevoegenAanDB()
         {
             DocentNr1 = textBox1.Text;
@@ -45,11 +47,13 @@ namespace project
             }
         }
 
+        //Voert de toevoeg functie uit
         private void Opslaan_Click(object sender, EventArgs e)
         {
             ToevoegenAanDB();
         }
 
+        //SLuit het scherm
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Hide();

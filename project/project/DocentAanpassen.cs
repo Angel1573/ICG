@@ -10,10 +10,11 @@ namespace project
         public DocentAanpassen()
         {
             InitializeComponent();
-            
+
             change();
             this.TopMost = true;
         }
+        //Lokale Dims
         string DocentNr1;
         string Voornaam1;
         string Achterternaam1;
@@ -24,10 +25,13 @@ namespace project
             this.Close();
         }
 
+        //Voert opslaan uit
         private void Opslaan_Click(object sender, EventArgs e)
         {
             Opslaan3();
         }
+
+        //Laad de inforamtie in de textboxen
         public void change()
         {
             textBox1.Text = Docenten.DocentNr;
@@ -37,6 +41,7 @@ namespace project
             textBox5.Text = Docenten.TelefoonNr;
         }
 
+        //Slaat de nieuewe informatie de door de gebruiker is ingevoerd op
         private void Opslaan3()
         {
             DataSet myDataSet;
@@ -73,6 +78,7 @@ namespace project
 
         }
 
+        //Vraagt Gebruiker of deze zeker is dat deze een record wil verwijderen
         private void Verwijderen_Click(object sender, EventArgs e)
         { 
              
@@ -88,6 +94,8 @@ namespace project
                 this.Hide();
             }
         }
+
+        //Verwijderd de door de gebruiker geselecteerde string
         private void verwijderen()
         {
             //DataSet myDataSet;

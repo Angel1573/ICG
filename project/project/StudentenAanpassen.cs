@@ -20,6 +20,8 @@ namespace project
             change();
 
         }
+
+        //loakle strings
         string StudentNr1 = "i";
         string Voornaam1;
         string Achternaam1;
@@ -73,12 +75,13 @@ namespace project
 
         }
 
+        //Sluit scherm knop
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         
-    
+    //Voert de opslaan functie uit
         private void Opslaan_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -86,7 +89,7 @@ namespace project
            
         }
 
-
+        //Slaat de door de gebruiker ingevoerde gegevens op
         private void Opslaan3()
         {
             DataSet myDataSet;
@@ -115,6 +118,7 @@ namespace project
             myConn.Close();
         }
 
+        //Vraagt de gebruiker of deze zeker weet dat de records verwijder moeten worden
         private void button1_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("Weet u zeker dat u dit ITEM wilt verwijderen?",
@@ -129,6 +133,8 @@ namespace project
                 this.Hide();
             }
         }
+
+        //Verwidjerd de door de gebuiker geslecteerde record
              private void verwijderen()
         {
            

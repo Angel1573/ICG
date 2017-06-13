@@ -14,11 +14,13 @@ namespace project
             instellingen();
         }
 
+        //Afsluit knop
         private void Afsluiten_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Home knop
         private void Home_Click(object sender, EventArgs e)
         {
             Hoofdscherm Hfd = new Hoofdscherm();
@@ -26,10 +28,13 @@ namespace project
             Hfd.Show();
         }
 
+        //Refresh knop, laad overzicht opnieuw
         private void Refresh_Click(object sender, EventArgs e)
         {
             instellingen();
         }
+
+        //Laat alle bedrijven zien, dit is het overzicht dat je ziet bij openen
         public void instellingen()
         {
             string Query = ("SELECT * FROM Instelling");
@@ -49,6 +54,8 @@ namespace project
                 MessageBox.Show("Kan verbinding niet openen ! ");
             }
         }
+
+        //Applicatie brede strings
         public static string InstellingNr;
         public static string InstellingNaam;
         public static string AfdelingNaam;
@@ -58,6 +65,7 @@ namespace project
         public static string AantalPlaatsenP1;
         public static string AantalPlaatsenP2;
 
+        //Laad de inforamtie uit de datagridview in diverse dims en opende het bewerkscherm
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
@@ -77,12 +85,15 @@ namespace project
             instAanpassen.Show();
         }
 
+        //Opent het toevoeg scherm
         private void button1_Click(object sender, EventArgs e)
         {
             InstellingToevoegen InstToevoegen = new InstellingToevoegen();
 
             InstToevoegen.Show();
         }
+
+        //Slaat de zoekopdracht als string op en voert de zoekopdracht uit
         string zoekopdracht;
         private void zoekbalk()
         {
@@ -105,6 +116,7 @@ namespace project
             }
         }
 
+        //Voert zoekopdracht uit
         private void button2_Click(object sender, EventArgs e)
         {
             zoekbalk();

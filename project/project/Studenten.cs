@@ -20,6 +20,8 @@ namespace project
             Student();
 
         }
+
+        //Applictie brede dims
         public static string StudentNr;
         public static string Voornaam;
         public static string Achternaam;
@@ -32,6 +34,7 @@ namespace project
         public static string Email;
         public static string Aantal;
 
+        //Laad de info in de dims en opent het bewerkscherm
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
@@ -58,6 +61,7 @@ namespace project
         {
 
         }
+
         //Laad alggemeen overzicht van studenten
         public void Student()
         {
@@ -90,11 +94,13 @@ namespace project
 
         }
 
+        //Sluit de applicatie af
         private void Afsluiten_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Opend het hoofscherm
         private void Home_Click(object sender, EventArgs e)
         {
             Hoofdscherm Hfd = new Hoofdscherm();
@@ -107,6 +113,7 @@ namespace project
 
         }
 
+        //Laat het toevoegscherm zien
         private void button1_Click(object sender, EventArgs e)
         {
             StudentenToevoegen stu = new StudentenToevoegen();
@@ -139,11 +146,13 @@ namespace project
             }
         }
 
+        //Voert de zoekfucntie uit
         private void button2_Click(object sender, EventArgs e)
         {
             zoekbalk();
         }
 
+        //Refresch knop
         private void Refresh_Click(object sender, EventArgs e)
         {
             Student();
@@ -152,6 +161,33 @@ namespace project
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //Laat zien waar diverse mensen stage lopen
+        private void stagelocatie()
+        {
+            string Query = ("SELECT Student.StudentNr, Student.Voornaam, Student.Achternaam, [Student.E-mail], Instelling.InstellingNaam, Instelling.AfdelingNaam, Instelling.AfdelingNr, Instelling.NaamContact, Instelling.ContactNr FROM Student, Instelling, Inschrijving WHERE Student.StudentNr = Inschrijving.StudentNr AND Instelling.InstellingNr = Inschrijving.InstellingNr");
+            OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
+            OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
+            DataSet ds = new DataSet();
+            try
+            {
+                connection.Open();
+                dataadapter.Fill(ds, "Save");
+                connection.Close();
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "Save";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kan verbinding niet openen ! ");
+            }
+        }
+
+        //Voert de stagelocatie functie uit
+        private void button3_Click(object sender, EventArgs e)
+        {
+            stagelocatie();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace project
             AlgemeenOverzicht();
         }
 
-
+        //Opend scherm Instellingen
         private void button1_Click(object sender, EventArgs e)
         {
             {
@@ -32,21 +32,13 @@ namespace project
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+        //Voert de zoekopdracht uit
         }
         private void button1_Click_3(object sender, EventArgs e)
         {
             zoekbalk();
         }
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        int functie3;
-        private void stagelocatiestudenten_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         //Knop Jaar 1
 
@@ -252,6 +244,7 @@ namespace project
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {}
 
+        //Opent de Studenten
         private void studenten_Click(object sender, EventArgs e)
         {
             Studenten Studenten = new Studenten();
@@ -259,6 +252,7 @@ namespace project
             Studenten.Show();
         }
 
+        //Opent het Docenten scherm
         private void Docenten_Click(object sender, EventArgs e)
         {
             Docenten Docenten = new Docenten();
@@ -272,28 +266,17 @@ namespace project
         //Refresh knop
 
         int functie1;
-       
-       
-
-        private void Refresh_Click_1(object sender, object e)
-        {
-           
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         
 
-        
+        //Refresh Knop
         private void button1_Click_2(object sender, EventArgs e)
         {
             AlgemeenOverzicht();
         }
         private void geenoptie()
         { MessageBox.Show("Seleceer een optie"); }
+        
         //Algemeen Overzicht Functie
         private void AlgemeenOverzicht()
         {
@@ -318,44 +301,9 @@ namespace project
 
 
         }
-        private void Bedrijven()
-        {
-            string Query = ("SELECT * FROM INSTELLING");
-            OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
-            DataSet ds = new DataSet();
-            try
-            {
-                connection.Open();
-                dataadapter.Fill(ds, "Save");
-                connection.Close();
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "Save";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Kan verbinding niet openen ! ");
-            }
-        }
-        private void stagelocatie()
-        {
-            string Query = ("SELECT Student.StudentNr, Student.Voornaam, Student.Achternaam, [Student.E-mail], Instelling.InstellingNaam, Instelling.AfdelingNaam, Instelling.AfdelingNr, Instelling.NaamContact, Instelling.ContactNr FROM Student, Instelling, Inschrijving WHERE Student.StudentNr = Inschrijving.StudentNr AND Instelling.InstellingNr = Inschrijving.InstellingNr");
-            OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
-            OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
-            DataSet ds = new DataSet();
-            try
-            {
-                connection.Open();
-                dataadapter.Fill(ds, "Save");
-                connection.Close();
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "Save";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Kan verbinding niet openen ! ");
-            }
-        }
+
+
+        //Functie die zoeken op het hoofdscherm mogelijk maakt
         string zoekopdracht;
         private void zoekbalk()
         {
@@ -384,6 +332,7 @@ namespace project
 
         }
 
+        //afsluiten
         private void Afsluiten_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -393,7 +342,7 @@ namespace project
         {
 
         }
-
+        //Database connectie knop
         private void button2_Click(object sender, EventArgs e)
         {
             DatabaseConnectie Con = new DatabaseConnectie();

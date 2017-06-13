@@ -14,6 +14,8 @@ namespace project
             textBox1.Text = Properties.Settings.Default.DatabaseInstelling;
             this.TopMost = true;
         }
+        
+        //Haalt de string uit de textbox
         string proef;
         public static string DatabaseLokatie = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + Properties.Settings.Default.DatabaseInstelling + "";
 
@@ -21,8 +23,10 @@ namespace project
         {
             proef = textBox1.Text;
             Proef();
-            
+
         }
+
+        //Simpele databaseconnectie de connectie probeert te maken met de ingevoerde connectie string
         public void Proef()
         {
             string ProefconnetionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + proef + "";
@@ -60,10 +64,7 @@ namespace project
         {
 
         }
-        string testing;
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
+      
     }
 }

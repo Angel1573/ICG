@@ -14,10 +14,9 @@ namespace project
             this.TopMost = true;
         }
 
-        private void StudentenToevoegen_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void StudentenToevoegen_Load(object sender, EventArgs e) { }
+        
+        //Lokale strings
         string StudentNr1 = "i";
         string Voornaam1;
         string Achternaam1;
@@ -38,6 +37,7 @@ namespace project
             this.Close();
         }
 
+        //Laad de info uit de textboxen in de dims en slaat de informatue io
         private void ToevoegenAanDB()
         {
             StudentNr1 = textBox1.Text;
@@ -70,6 +70,7 @@ namespace project
             }
         }
 
+        //Sluit knop
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
