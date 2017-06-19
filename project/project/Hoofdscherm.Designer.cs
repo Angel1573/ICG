@@ -47,11 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Instellingen = new System.Windows.Forms.Button();
             this.Docenten = new System.Windows.Forms.Button();
             this.studenten = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -200,11 +202,12 @@
             // 
             // Afsluiten
             // 
-            this.Afsluiten.Location = new System.Drawing.Point(871, 12);
+            this.Afsluiten.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Afsluiten.BackgroundImage")));
+            this.Afsluiten.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Afsluiten.Location = new System.Drawing.Point(889, 19);
             this.Afsluiten.Name = "Afsluiten";
-            this.Afsluiten.Size = new System.Drawing.Size(85, 23);
+            this.Afsluiten.Size = new System.Drawing.Size(50, 43);
             this.Afsluiten.TabIndex = 21;
-            this.Afsluiten.Text = "Afsluiten";
             this.Afsluiten.UseVisualStyleBackColor = true;
             this.Afsluiten.Click += new System.EventHandler(this.Afsluiten_Click);
             // 
@@ -233,7 +236,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
-            this.label4.Location = new System.Drawing.Point(511, 12);
+            this.label4.Location = new System.Drawing.Point(541, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 27;
@@ -263,22 +266,32 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(571, 83);
+            this.label6.Location = new System.Drawing.Point(568, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 30;
             this.label6.Text = "Instelling";
+            // 
+            // button3
+            // 
+            this.button3.Image = global::project.Properties.Resources.stagesicon;
+            this.button3.Location = new System.Drawing.Point(630, 36);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(46, 45);
+            this.button3.TabIndex = 32;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(506, 104);
+            this.button2.Image = global::project.Properties.Resources.optiesicon;
+            this.button2.Location = new System.Drawing.Point(889, 65);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(63, 24);
+            this.button2.Size = new System.Drawing.Size(50, 43);
             this.button2.TabIndex = 31;
-            this.button2.Text = "Connectie";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -326,12 +339,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(627, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 15);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Inschrijving";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // Hoofdscherm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 733);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -384,6 +410,8 @@
         private System.Windows.Forms.Button Jaar1;
         private System.Windows.Forms.Button Alles;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
     }
 }
 

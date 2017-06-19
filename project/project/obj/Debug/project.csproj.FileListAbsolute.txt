@@ -28,3 +28,4 @@ C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.DocentAanpasse
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InstellingenAanpassen.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InstellingToevoegen.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.DatabaseConnectie.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Inschrijving.resources

@@ -9,9 +9,11 @@ namespace project
     {
         public Instellingen()
         {
+           
             this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
             instellingen();
+
         }
 
         //Afsluit knop
@@ -62,6 +64,7 @@ namespace project
         public static string AfdelingNr;
         public static string NaamContact;
         public static string ContactNr;
+        public static string ContactMail;
         public static string AantalPlaatsenP1;
         public static string AantalPlaatsenP2;
 
@@ -77,8 +80,9 @@ namespace project
             Instellingen.AfdelingNr = row.Cells[3].Value.ToString();
             Instellingen.NaamContact = row.Cells[4].Value.ToString();
             Instellingen.ContactNr = row.Cells[5].Value.ToString();
-            Instellingen.AantalPlaatsenP1 = row.Cells[6].Value.ToString();
-            Instellingen.AantalPlaatsenP2 = row.Cells[7].Value.ToString();
+            Instellingen.ContactMail = row.Cells[6].Value.ToString();
+            Instellingen.AantalPlaatsenP1 = row.Cells[7].Value.ToString();
+            Instellingen.AantalPlaatsenP2 = row.Cells[8].Value.ToString();
 
             InstellingenAanpassen instAanpassen = new InstellingenAanpassen();
 
@@ -131,7 +135,16 @@ namespace project
         {
 
         }
-        
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

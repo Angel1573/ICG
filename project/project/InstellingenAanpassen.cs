@@ -27,6 +27,7 @@ namespace project
         string AfdelingNr1;
         string NaamContact1;
         string ContactNr1;
+        string ContactMail1;
         string AantalPlaatsenP11;
         string AantalPlaatsenP21;
 
@@ -51,8 +52,9 @@ namespace project
             textBox4.Text = Instellingen.AfdelingNr;
             textBox5.Text = Instellingen.NaamContact;
             textBox6.Text = Instellingen.ContactNr;
-            textBox7.Text = Instellingen.AantalPlaatsenP1;
-            textBox8.Text = Instellingen.AantalPlaatsenP2;
+            textBox7.Text = Instellingen.ContactMail;
+            textBox8.Text = Instellingen.AantalPlaatsenP1;
+            textBox9.Text = Instellingen.AantalPlaatsenP2;
         }
 
         //Slaat de door de gebruiker ingevoerde gegevens op
@@ -67,10 +69,11 @@ namespace project
             AfdelingNr1 = textBox4.Text;
             NaamContact1 = textBox5.Text;
             ContactNr1 = textBox6.Text;
-            AantalPlaatsenP11 = textBox7.Text;
-            AantalPlaatsenP21 = textBox8.Text;
+            ContactMail1 = textBox7.Text;
+            AantalPlaatsenP11 = textBox8.Text;
+            AantalPlaatsenP21 = textBox9.Text;
 
-            Query = ("UPDATE Instelling SET InstellingNaam = \"" + InstellingNaam1 + "\", AfdelingNaam = \"" + AfdelingNaam1 + "\", AfdelingNr = \"" + AfdelingNr1 + "\", NaamContact = \"" + NaamContact1 + "\", ContactNr = \"" + ContactNr1 + "\", AantalPlaatsenP1 = \"" + AantalPlaatsenP11 + "\", AantalPlaatsenP2 = \"" + AantalPlaatsenP21 + "\" WHERE InstellingNr = " + Instellingen.InstellingNr);
+            Query = ("UPDATE Instelling SET InstellingNaam = \"" + InstellingNaam1 + "\", AfdelingNaam = \"" + AfdelingNaam1 + "\", AfdelingNr = \"" + AfdelingNr1 + "\", NaamContact = \"" + NaamContact1 + "\", ContactNr = \"" + ContactNr1 + "\", ContactMail = \"" + ContactMail1 + "\", AantalPlaatsenP1 = \"" + AantalPlaatsenP11 + "\", AantalPlaatsenP2 = \"" + AantalPlaatsenP21 + "\" WHERE InstellingNr = " + Instellingen.InstellingNr);
             OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
             myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
@@ -110,14 +113,11 @@ namespace project
         private void verwijderen()
 
         {
-          
+
             string Query;
-            
 
-            
-            Query = ("DELETE * FROM INSTELING WHERE InstelingtNr = " + Instellingen.InstellingNr);
-
-            MessageBox.Show(Query);
+            Query = ("DELETE * FROM INSTELLING WHERE InstellingNr = " + Instellingen.InstellingNr);
+           
             OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
             myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
@@ -127,12 +127,15 @@ namespace project
 
             DataSet custDS = new DataSet();
             myDataAdapter.Fill(custDS);
+            MessageBox.Show(Query);
+
             myConn.Close();
 
 
 
-        }
 
+        }
+        //Query = ("DELETE * FROM INSTELING WHERE InstelingtNr = " + Instellingen.InstellingNr);
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 

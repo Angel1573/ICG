@@ -27,6 +27,7 @@ namespace project
             string AfdelingNr1;
             string NaamContact1;
             string ContactNr1;
+            string ContactMail1;
             string AantalPlaatsenP11;
             string AantalPlaatsenP21;
 
@@ -36,8 +37,9 @@ namespace project
             AfdelingNr1 = textBox3.Text;
             NaamContact1 = textBox4.Text;
             ContactNr1 = textBox5.Text;
-            AantalPlaatsenP11 = textBox6.Text;
-            AantalPlaatsenP21 = textBox7.Text;
+            ContactMail1 = textBox6.Text;
+            AantalPlaatsenP11 = textBox7.Text;
+            AantalPlaatsenP21 = textBox8.Text;
             try
             {
                
@@ -46,7 +48,7 @@ namespace project
 
                 OleDbDataAdapter adapter = new OleDbDataAdapter();
                 adapter.InsertCommand = new OleDbCommand();
-                adapter.InsertCommand.CommandText = ("INSERT INTO INSTELLING (InstellingNaam, AfdelingNaam, AfdelingNr, NaamContact, ContactNr, AantalPlaatsenP1, AantalPlaatsenP2) VALUES(\"" + InstellingNaam1 + "\", \"" + AfdelingNaam1 + "\", \"" + AfdelingNr1 + "\", \"" + NaamContact1 + "\", \"" + ContactNr1 + "\", \"" + AantalPlaatsenP11 + "\", \"" + AantalPlaatsenP21 + "\")");
+                adapter.InsertCommand.CommandText = ("INSERT INTO INSTELLING (InstellingNaam, AfdelingNaam, AfdelingNr, NaamContact, ContactNr, ContactMail, AantalPlaatsenP1, AantalPlaatsenP2) VALUES(\"" + InstellingNaam1 + "\", \"" + AfdelingNaam1 + "\", \"" + AfdelingNr1 + "\", \"" + NaamContact1 + "\", \"" + ContactNr1 + "\", \"" + ContactMail1 + "\", \"" + AantalPlaatsenP11 + "\", \"" + AantalPlaatsenP21 + "\")");
                 
                 conn.Open();
 
@@ -54,6 +56,7 @@ namespace project
                 adapter.InsertCommand.Connection = conn;
                 adapter.InsertCommand.ExecuteNonQuery();
                 this.Hide();
+                
             }
             catch (OleDbException exp)
             {

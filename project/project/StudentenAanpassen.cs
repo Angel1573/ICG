@@ -25,14 +25,16 @@ namespace project
         string StudentNr1 = "i";
         string Voornaam1;
         string Achternaam1;
-        string KlasCode1;
+        string Jaar1;
+        string Studievorm1;
         string Adres1;
         string Postcode1;
         string Woonplaats1;
         string TelefoonNr1;
         string MobielNr1;
         string Email1;
-        string Aantal1;
+        string KlasCode1;
+        //string Aantal1;
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -43,14 +45,15 @@ namespace project
             textBox1.Text = Studenten.StudentNr;
             textBox2.Text = Studenten.Voornaam;
             textBox3.Text = Studenten.Achternaam;
-            textBox4.Text = Studenten.KlasCode;
-            textBox5.Text = Studenten.Adres;
-            textBox6.Text = Studenten.Postcode;
-            textBox7.Text = Studenten.Woonplaats;
-            textBox8.Text = Studenten.TelefoonNr;
-            textBox9.Text = Studenten.MobielNr;
-            textBox10.Text = Studenten.Email;
-            textBox11.Text = Studenten.Aantal;
+            textBox4.Text = Studenten.Jaar;
+            textBox5.Text = Studenten.StudieVorm;
+            textBox6.Text = Studenten.Adres;
+            textBox7.Text = Studenten.Postcode;
+            textBox8.Text = Studenten.Woonplaats;
+            textBox9.Text = Studenten.TelefoonNr;
+            textBox10.Text = Studenten.MobielNr;
+            textBox11.Text = Studenten.Email;
+            textBox12.Text = Studenten.KlasCode;
             // public Studenten(
 
         }
@@ -97,17 +100,20 @@ namespace project
             string Query;
             string myTableName;
             StudentNr1 = textBox1.Text;
-            Voornaam1 = textBox2.Text;
-            Achternaam1 = textBox3.Text;
-            KlasCode1 = textBox4.Text;
-            Adres1 = textBox5.Text;
-            Postcode1 = textBox6.Text;
-            Woonplaats1 = textBox7.Text;
-            TelefoonNr1 = textBox8.Text;
-            MobielNr1 = textBox9.Text;
-            Email1 = textBox10.Text;
-            Aantal1 = textBox11.Text;
-            Query = ("UPDATE STUDENT SET StudentNr = \"" + StudentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achternaam1 + "\", KlasCode = \"" + KlasCode1 + "\", Adres = \"" + Adres1 + "\", Postcode = \"" + Postcode1 + "\", Woonplaats = \"" + Woonplaats1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\", MobielNr = \"" + MobielNr1 + "\", [E-mail] = \"" + Email1 + "\", Aantal = \"" + Aantal1 + "\" WHERE StudentNr = " + Studenten.StudentNr);
+            Voornaam1 = textBox2.Text; 
+            Achternaam1 = textBox3.Text; 
+            Jaar1 = textBox4.Text; 
+            Studievorm1 = textBox5.Text; 
+            Adres1 = textBox6.Text; 
+            Postcode1 = textBox7.Text;
+            Woonplaats1 = textBox8.Text;
+            TelefoonNr1 = textBox9.Text; 
+            MobielNr1 = textBox10.Text; 
+            Email1 = textBox11.Text; 
+            KlasCode1 = textBox12.Text; 
+            
+            //Aantal1 = textBox11.Text;
+            Query = ("UPDATE STUDENT SET StudentNr = \"" + StudentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achternaam1 + "\", Jaar = \"" + Jaar1 + "\", Studievorm = \"" + Studievorm1 + "\", Adres = \"" + Adres1 + "\", Postcode = \"" + Postcode1 + "\", Woonplaats = \"" + Woonplaats1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\", MobielNr = \"" + MobielNr1 + "\", Email = \"" + Email1 + "\", KlasCode = \"" + KlasCode1 + "\" WHERE StudentNr = " + Studenten.StudentNr);
             OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
             myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);
@@ -142,7 +148,7 @@ namespace project
            
             mySelectQuery = ("DELETE * FROM STUDENT WHERE StudentNr = " + Studenten.StudentNr);
 
-            MessageBox.Show(mySelectQuery);
+            
             OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
             myDataAdapter.SelectCommand = new OleDbCommand(mySelectQuery, myConn);

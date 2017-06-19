@@ -81,7 +81,7 @@ namespace project
         private void zoekbalk()
         {
             zoekopdracht = textBox1.Text;
-            string Query = ("SELECT * FROM Docent WHERE DocentNr LIKE \"%" + zoekopdracht + "%\" OR Voornaam LIKE \"%" + zoekopdracht + "%\" OR Achternaam LIKE \"%" + zoekopdracht + "%\" OR [E-mail] LIKE \"%" + zoekopdracht + "%\" OR TelefoonNr LIKE \"%" + zoekopdracht + "%\"");
+            string Query = ("SELECT * FROM Docent WHERE DocentNr LIKE \"%" + zoekopdracht + "%\" OR Voornaam LIKE \"%" + zoekopdracht + "%\" OR Achternaam LIKE \"%" + zoekopdracht + "%\" OR Email LIKE \"%" + zoekopdracht + "%\" OR TelefoonNr LIKE \"%" + zoekopdracht + "%\"");
             OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
             DataSet ds = new DataSet();

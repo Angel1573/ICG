@@ -54,7 +54,7 @@ namespace project
             Achterternaam1 = textBox3.Text;
             Email1 = textBox4.Text;
             TelefoonNr1 = textBox5.Text;
-            Query = ("UPDATE DOCENT SET DocentNr = \"" + DocentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achterternaam1 + "\", [E-mail] = \"" + Email1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\" WHERE DocentNr = " + Docenten.DocentNr);
+            Query = ("UPDATE DOCENT SET DocentNr = \"" + DocentNr1 + "\", Voornaam = \"" + Voornaam1 + "\", AchterNaam = \"" + Achterternaam1 + "\", Email = \"" + Email1 + "\", TelefoonNr = \"" + TelefoonNr1 + "\" WHERE DocentNr = " + Docenten.DocentNr);
             MessageBox.Show(Query);
             OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
@@ -105,7 +105,7 @@ namespace project
             
             
             Query = ("DELETE * FROM DOCENT WHERE DocentNr = " + Docenten.DocentNr);
-            MessageBox.Show(Query);
+            
             OleDbConnection myConn = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter myDataAdapter = new OleDbDataAdapter();
             myDataAdapter.SelectCommand = new OleDbCommand(Query, myConn);

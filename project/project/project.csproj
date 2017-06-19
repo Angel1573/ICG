@@ -77,6 +77,12 @@
     <Compile Include="Hoofdscherm.Designer.cs">
       <DependentUpon>Hoofdscherm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inschrijving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inschrijving.Designer.cs">
+      <DependentUpon>Inschrijving.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instellingen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <EmbeddedResource Include="Hoofdscherm.resx">
       <DependentUpon>Hoofdscherm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inschrijving.resx">
+      <DependentUpon>Inschrijving.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instellingen.resx">
       <DependentUpon>Instellingen.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tandwiel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\optiesicon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stagesicon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

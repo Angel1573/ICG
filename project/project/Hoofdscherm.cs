@@ -155,7 +155,7 @@ namespace project
         //Knop Deeltijd
 
         int tijd;
-        int JaarDeel = 0;
+        string JaarDeel = "0";
         private void Deeltijd_Click(object sender, EventArgs e)
         {
             if (tijd == 0)
@@ -163,7 +163,7 @@ namespace project
                 Deeltijd.BackColor = Color.FromArgb(0, 55, 97);
                 Deeltijd.ForeColor = Color.White;
                 tijd = 1;
-                JaarDeel = 5;
+                JaarDeel = "DT";
                 AlgemeenOverzicht();
             }
             else
@@ -171,7 +171,7 @@ namespace project
                 Deeltijd.BackColor = Color.White;
                 Deeltijd.ForeColor = Color.Black;
                 tijd = 0;
-                JaarDeel = 0;
+                JaarDeel = "0";
                 AlgemeenOverzicht();
             }
         }
@@ -197,7 +197,7 @@ namespace project
                 Deeltijd.BackColor = Color.FromArgb(0, 55, 97);
                 Deeltijd.ForeColor = Color.White;
                 tijd = 1;
-                JaarDeel = 5;
+                JaarDeel = "DT";
                 Jaar3.BackColor = Color.FromArgb(0, 55, 97);
                 Jaar3.ForeColor = Color.White;
                 drie = 1;
@@ -236,7 +236,7 @@ namespace project
                 Deeltijd.BackColor = Color.White;
                 Deeltijd.ForeColor = Color.Black;
                 tijd = 0;
-                JaarDeel = 0;
+                JaarDeel = "0";
                 AlgemeenOverzicht();
             }
         } 
@@ -280,8 +280,10 @@ namespace project
         //Algemeen Overzicht Functie
         private void AlgemeenOverzicht()
         {
-            string Query = ("SELECT Student.StudentNr, Student.Voornaam, Student.AchterNaam, Klas.Klascode, Klas.Jaar, Instelling.InstellingNaam, Instelling.AfdelingNaam FROM Student, Klas, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr AND Student.Klascode = Klas.Klascode AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Jaar IN (" + Knopjr1 + " , " + Knopjr2 + " , " + Knopjr3 + " , " + Knopjr4 + " , " + JaarDeel + ") ORDER BY Student.StudentNr");
+            //string Query = ("SELECT Student.StudentNr, Student.Voornaam, Student.AchterNaam, Student.Jaar, Instelling.InstellingNaam, Instelling.AfdelingNaam,  FROM Student, Klas, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr AND Inschrijving.InstellingNr = Instelling.InstellingNr AND Klas.Jaar IN (" + Knopjr1 + " , " + Knopjr2 + " , " + Knopjr3 + " , " + Knopjr4 + " , " + JaarDeel + ") ORDER BY Student.StudentNr");
+            string Query = ("SELECT Student.StudentNr as Studentnummer, Student.Voornaam, Student.AchterNaam as Achternaam, Instelling.InstellingNaam as Instellingnaam, Instelling.AfdelingNaam, Inschrijving.Differentiatie, Inschrijving.Jaar, Inschrijving.StartDatum, Inschrijving.EindDatum FROM Student, Inschrijving, Instelling WHERE Inschrijving.StudentNr = Student.StudentNr And Inschrijving.InstellingNr = Instelling.InstellingNr And Student.Jaar In (\"" + Knopjr1 + "\", \"" + Knopjr2 + "\", \"" + Knopjr3 + "\", \"" + Knopjr4 + "\", \"" + JaarDeel + "\") AND now() between [Inschrijving.StartDatum] and [Inschrijving.EindDatum] ORDER BY Student.StudentNr;");
             string myString = Knopjr2.ToString();
+            
             
             OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
@@ -347,6 +349,18 @@ namespace project
         {
             DatabaseConnectie Con = new DatabaseConnectie();
             Con.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Inschrijving Inschij = new Inschrijving();
+
+            Inschij.Show();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

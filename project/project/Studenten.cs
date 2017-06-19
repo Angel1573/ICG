@@ -25,14 +25,16 @@ namespace project
         public static string StudentNr;
         public static string Voornaam;
         public static string Achternaam;
-        public static string KlasCode;
+        public static string Jaar;
+        public static string StudieVorm;
         public static string Adres;
         public static string Postcode;
         public static string Woonplaats;
         public static string TelefoonNr;
         public static string MobielNr;
         public static string Email;
-        public static string Aantal;
+        public static string KlasCode;
+        //public static string Aantal;
 
         //Laad de info in de dims en opent het bewerkscherm
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -43,14 +45,15 @@ namespace project
             Studenten.StudentNr = row.Cells[0].Value.ToString();
             Studenten.Voornaam = row.Cells[1].Value.ToString();
             Studenten.Achternaam = row.Cells[2].Value.ToString();
-            Studenten.KlasCode = row.Cells[3].Value.ToString();
-            Studenten.Adres = row.Cells[4].Value.ToString();
-            Studenten.Postcode = row.Cells[5].Value.ToString();
-            Studenten.Woonplaats = row.Cells[6].Value.ToString();
-            Studenten.TelefoonNr = row.Cells[7].Value.ToString();
-            Studenten.MobielNr = row.Cells[8].Value.ToString();
-            Studenten.Email = row.Cells[9].Value.ToString();
-            Studenten.Aantal = row.Cells[10].Value.ToString();
+            Studenten.Jaar = row.Cells[3].Value.ToString();
+            Studenten.StudieVorm = row.Cells[4].Value.ToString();
+            Studenten.Adres = row.Cells[5].Value.ToString();
+            Studenten.Postcode = row.Cells[6].Value.ToString();
+            Studenten.Woonplaats = row.Cells[7].Value.ToString();
+            Studenten.TelefoonNr = row.Cells[8].Value.ToString();
+            Studenten.MobielNr = row.Cells[9].Value.ToString();
+            Studenten.Email = row.Cells[10].Value.ToString();
+            Studenten.KlasCode = row.Cells[11].Value.ToString();
             StudentenAanpassen Aanpassen = new StudentenAanpassen();
 
             Aanpassen.Show();

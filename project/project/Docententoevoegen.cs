@@ -35,7 +35,7 @@ namespace project
                 conn.ConnectionString = DatabaseConnectie.DatabaseLokatie;
                 OleDbDataAdapter adapter = new OleDbDataAdapter();
                 adapter.InsertCommand = new OleDbCommand();
-                adapter.InsertCommand.CommandText = ("INSERT INTO DOCENT (DocentNr, Voornaam, Achternaam, [E-mail], TelefoonNr) VALUES(\"" + DocentNr1 + "\", \"" + Voornaam1 + "\", \"" + Achterternaam1 + "\", \"" + Email1 + "\", \"" + TelefoonNr1 + "\")");
+                adapter.InsertCommand.CommandText = ("INSERT INTO DOCENT (DocentNr, Voornaam, Achternaam, Email, TelefoonNr) VALUES(\"" + DocentNr1 + "\", \"" + Voornaam1 + "\", \"" + Achterternaam1 + "\", \"" + Email1 + "\", \"" + TelefoonNr1 + "\")");
                 conn.Open();
                 adapter.InsertCommand.Connection = conn;
                 adapter.InsertCommand.ExecuteNonQuery();

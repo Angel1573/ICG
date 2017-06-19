@@ -49,10 +49,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.Opslaan = new System.Windows.Forms.Button();
             this.Verwijderen = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -165,7 +168,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 142);
+            this.label4.Location = new System.Drawing.Point(25, 345);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 14;
@@ -174,7 +177,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 168);
+            this.label5.Location = new System.Drawing.Point(25, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 15;
@@ -183,7 +186,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 194);
+            this.label6.Location = new System.Drawing.Point(23, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 16;
@@ -192,7 +195,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 220);
+            this.label7.Location = new System.Drawing.Point(24, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 17;
@@ -201,7 +204,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 246);
+            this.label8.Location = new System.Drawing.Point(23, 268);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 13);
             this.label8.TabIndex = 18;
@@ -211,27 +214,18 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 272);
+            this.label9.Location = new System.Drawing.Point(23, 294);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 19;
             this.label9.Text = "Mobiel nummer";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 298);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Mail";
             // 
             // Opslaan
             // 
             this.Opslaan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.Opslaan.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Opslaan.ForeColor = System.Drawing.Color.White;
-            this.Opslaan.Location = new System.Drawing.Point(118, 346);
+            this.Opslaan.Location = new System.Drawing.Point(118, 372);
             this.Opslaan.Name = "Opslaan";
             this.Opslaan.Size = new System.Drawing.Size(103, 42);
             this.Opslaan.TabIndex = 21;
@@ -244,7 +238,7 @@
             this.Verwijderen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.Verwijderen.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Verwijderen.ForeColor = System.Drawing.Color.White;
-            this.Verwijderen.Location = new System.Drawing.Point(248, 347);
+            this.Verwijderen.Location = new System.Drawing.Point(248, 373);
             this.Verwijderen.Name = "Verwijderen";
             this.Verwijderen.Size = new System.Drawing.Size(104, 41);
             this.Verwijderen.TabIndex = 23;
@@ -263,16 +257,53 @@
             this.label11.Text = "Student aanpassen";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(118, 342);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(234, 20);
+            this.textBox12.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 320);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Mail";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 164);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Studievorm";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 138);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(27, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Jaar";
+            // 
             // StudentenAanpassen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(385, 412);
+            this.ClientSize = new System.Drawing.Size(385, 438);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Verwijderen);
             this.Controls.Add(this.Opslaan);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -325,9 +356,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Opslaan;
         private System.Windows.Forms.Button Verwijderen;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
     }
 }

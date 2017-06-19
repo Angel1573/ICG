@@ -47,7 +47,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(316, 63);
+            this.button1.Location = new System.Drawing.Point(367, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 28);
             this.button1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(13, 11);
+            this.label1.Location = new System.Drawing.Point(10, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 16);
             this.label1.TabIndex = 2;
@@ -68,11 +68,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 57);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(178, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 13);
+            this.label2.Size = new System.Drawing.Size(292, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Voorbeeld:    C:/Users/Gerbrand/Desktop/Database.accdb";
+            this.label2.Text = "Voorbeeld:    C:/Users/Gebruiker/Desktop/Database.accdb";
             // 
             // DatabaseConnectie
             // 
