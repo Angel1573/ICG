@@ -39,24 +39,27 @@ namespace project
         //Laad de info in de dims en opent het bewerkscherm
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[rowIndex];
-            //textBox1.Text = dataGridView1.Rows[1].Cells[1].Value.ToString();
-            Studenten.StudentNr = row.Cells[0].Value.ToString();
-            Studenten.Voornaam = row.Cells[1].Value.ToString();
-            Studenten.Achternaam = row.Cells[2].Value.ToString();
-            Studenten.Jaar = row.Cells[3].Value.ToString();
-            Studenten.StudieVorm = row.Cells[4].Value.ToString();
-            Studenten.Adres = row.Cells[5].Value.ToString();
-            Studenten.Postcode = row.Cells[6].Value.ToString();
-            Studenten.Woonplaats = row.Cells[7].Value.ToString();
-            Studenten.TelefoonNr = row.Cells[8].Value.ToString();
-            Studenten.MobielNr = row.Cells[9].Value.ToString();
-            Studenten.Email = row.Cells[10].Value.ToString();
-            Studenten.KlasCode = row.Cells[11].Value.ToString();
-            StudentenAanpassen Aanpassen = new StudentenAanpassen();
+            try {
+                int rowIndex = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                //textBox1.Text = dataGridView1.Rows[1].Cells[1].Value.ToString();
+                Studenten.StudentNr = row.Cells[0].Value.ToString();
+                Studenten.Voornaam = row.Cells[1].Value.ToString();
+                Studenten.Achternaam = row.Cells[2].Value.ToString();
+                Studenten.Jaar = row.Cells[3].Value.ToString();
+                Studenten.StudieVorm = row.Cells[4].Value.ToString();
+                Studenten.Adres = row.Cells[5].Value.ToString();
+                Studenten.Postcode = row.Cells[6].Value.ToString();
+                Studenten.Woonplaats = row.Cells[7].Value.ToString();
+                Studenten.TelefoonNr = row.Cells[8].Value.ToString();
+                Studenten.MobielNr = row.Cells[9].Value.ToString();
+                Studenten.Email = row.Cells[10].Value.ToString();
+                Studenten.KlasCode = row.Cells[11].Value.ToString();
+                StudentenAanpassen Aanpassen = new StudentenAanpassen();
 
-            Aanpassen.Show();
+                Aanpassen.Show();
+            }
+            catch { }
         }
 
 
@@ -191,6 +194,11 @@ namespace project
         private void button3_Click(object sender, EventArgs e)
         {
             stagelocatie();
+        }
+
+        private void Afsluiten_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

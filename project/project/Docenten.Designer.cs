@@ -35,8 +35,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.Home = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Afsluiten = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -115,19 +116,6 @@
             this.label1.Text = "Docentbeheer";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Home
-            // 
-            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
-            this.Home.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold);
-            this.Home.ForeColor = System.Drawing.Color.White;
-            this.Home.Location = new System.Drawing.Point(827, 45);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(88, 53);
-            this.Home.TabIndex = 3;
-            this.Home.Text = "Terug naar hoofdscherm";
-            this.Home.UseVisualStyleBackColor = false;
-            this.Home.Click += new System.EventHandler(this.Home_Click_1);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -138,11 +126,37 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
+            // Afsluiten
+            // 
+            this.Afsluiten.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Afsluiten.BackgroundImage")));
+            this.Afsluiten.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Afsluiten.Location = new System.Drawing.Point(491, 13);
+            this.Afsluiten.Name = "Afsluiten";
+            this.Afsluiten.Size = new System.Drawing.Size(50, 43);
+            this.Afsluiten.TabIndex = 43;
+            this.Afsluiten.UseVisualStyleBackColor = true;
+            this.Afsluiten.Click += new System.EventHandler(this.Afsluiten_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(97)))));
+            this.button3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(491, 62);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(50, 43);
+            this.button3.TabIndex = 42;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Docenten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 501);
+            this.Controls.Add(this.Afsluiten);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Refresh);
@@ -150,7 +164,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Home);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Docenten";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -170,7 +183,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Home;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Afsluiten;
+        private System.Windows.Forms.Button button3;
     }
 }

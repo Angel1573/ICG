@@ -29,3 +29,5 @@ C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InstellingenAa
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InstellingToevoegen.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.DatabaseConnectie.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Inschrijving.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InschrijvingToevoegen.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InschrijvingAanpassen.resources

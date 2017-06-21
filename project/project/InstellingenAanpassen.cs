@@ -127,7 +127,7 @@ namespace project
 
             DataSet custDS = new DataSet();
             myDataAdapter.Fill(custDS);
-            MessageBox.Show(Query);
+           
 
             myConn.Close();
 

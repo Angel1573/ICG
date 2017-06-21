@@ -135,20 +135,22 @@ namespace project
         //Bekijkt welke row in de datagridview is aangeklikt en slaat deze vervolgens op en opende het bewerkingsvenster
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                int rowIndex = e.RowIndex;
 
-            int rowIndex = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                Docenten.DocentNr = row.Cells[0].Value.ToString();
+                Docenten.Voornaam = row.Cells[1].Value.ToString();
+                Docenten.Achternaam = row.Cells[2].Value.ToString();
+                Docenten.Email = row.Cells[3].Value.ToString();
+                Docenten.TelefoonNr = row.Cells[4].Value.ToString();
 
-            DataGridViewRow row = dataGridView1.Rows[rowIndex];
-            Docenten.DocentNr = row.Cells[0].Value.ToString();
-            Docenten.Voornaam = row.Cells[1].Value.ToString();
-            Docenten.Achternaam = row.Cells[2].Value.ToString();
-            Docenten.Email = row.Cells[3].Value.ToString();
-            Docenten.TelefoonNr = row.Cells[4].Value.ToString();
+                DocentAanpassen DocAanpassen = new DocentAanpassen();
+                DocAanpassen.Show();
 
-            DocentAanpassen DocAanpassen = new DocentAanpassen();
-            DocAanpassen.Show();
-
-
+            }
+            catch { }
         }
 
         //Voert zoekopdracht uit
@@ -165,6 +167,18 @@ namespace project
         private void Docenten_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hoofdscherm Hfd = new Hoofdscherm();
+            this.Hide();
+            Hfd.Show();
+        }
+
+        private void Afsluiten_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

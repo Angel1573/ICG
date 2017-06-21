@@ -83,6 +83,18 @@
     <Compile Include="Inschrijving.Designer.cs">
       <DependentUpon>Inschrijving.cs</DependentUpon>
     </Compile>
+    <Compile Include="InschrijvingAanpassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InschrijvingAanpassen.Designer.cs">
+      <DependentUpon>InschrijvingAanpassen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InschrijvingToevoegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InschrijvingToevoegen.Designer.cs">
+      <DependentUpon>InschrijvingToevoegen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instellingen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inschrijving.resx">
       <DependentUpon>Inschrijving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InschrijvingAanpassen.resx">
+      <DependentUpon>InschrijvingAanpassen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InschrijvingToevoegen.resx">
+      <DependentUpon>InschrijvingToevoegen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instellingen.resx">
       <DependentUpon>Instellingen.cs</DependentUpon>

@@ -71,22 +71,26 @@ namespace project
         //Laad de inforamtie uit de datagridview in diverse dims en opende het bewerkscherm
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[rowIndex];
-            //textBox1.Text = dataGridView1.Rows[1].Cells[1].Value.ToString();
-            Instellingen.InstellingNr = row.Cells[0].Value.ToString();
-            Instellingen.InstellingNaam = row.Cells[1].Value.ToString();
-            Instellingen.AfdelingNaam = row.Cells[2].Value.ToString();
-            Instellingen.AfdelingNr = row.Cells[3].Value.ToString();
-            Instellingen.NaamContact = row.Cells[4].Value.ToString();
-            Instellingen.ContactNr = row.Cells[5].Value.ToString();
-            Instellingen.ContactMail = row.Cells[6].Value.ToString();
-            Instellingen.AantalPlaatsenP1 = row.Cells[7].Value.ToString();
-            Instellingen.AantalPlaatsenP2 = row.Cells[8].Value.ToString();
+            try {
+                int rowIndex = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                //textBox1.Text = dataGridView1.Rows[1].Cells[1].Value.ToString();
+                Instellingen.InstellingNr = row.Cells[0].Value.ToString();
+                Instellingen.InstellingNaam = row.Cells[1].Value.ToString();
+                Instellingen.AfdelingNaam = row.Cells[2].Value.ToString();
+                Instellingen.AfdelingNr = row.Cells[3].Value.ToString();
+                Instellingen.NaamContact = row.Cells[4].Value.ToString();
+                Instellingen.ContactNr = row.Cells[5].Value.ToString();
+                Instellingen.ContactMail = row.Cells[6].Value.ToString();
+                Instellingen.AantalPlaatsenP1 = row.Cells[7].Value.ToString();
+                Instellingen.AantalPlaatsenP2 = row.Cells[8].Value.ToString();
 
-            InstellingenAanpassen instAanpassen = new InstellingenAanpassen();
+                InstellingenAanpassen instAanpassen = new InstellingenAanpassen();
 
-            instAanpassen.Show();
+                instAanpassen.Show();
+            }
+            catch {}
+
         }
 
         //Opent het toevoeg scherm
@@ -144,6 +148,11 @@ namespace project
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Afsluiten_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 
