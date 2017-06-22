@@ -17,7 +17,9 @@ namespace project
         {
             this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
+            allesgeselecteerd();
             Student();
+           
 
         }
 
@@ -71,7 +73,8 @@ namespace project
         //Laad alggemeen overzicht van studenten
         public void Student()
         {
-            string Query = ("SELECT * FROM Student");
+            string Query = ("SELECT * FROM Student WHERE Jaar In (\"" + Knopjr1 + "\", \"" + Knopjr2 + "\", \"" + Knopjr3 + "\", \"" + Knopjr4 + "\", \"" + JaarDeel + "\")");
+            
             OleDbConnection connection = new OleDbConnection(DatabaseConnectie.DatabaseLokatie);
             OleDbDataAdapter dataadapter = new OleDbDataAdapter(Query, connection);
             DataSet ds = new DataSet();
@@ -169,7 +172,7 @@ namespace project
 
         }
 
-        //Laat zien waar diverse mensen stage lopen
+        //Laat zien waar diverse mensen stage lopen Niet in gebruik
         private void stagelocatie()
         {
             string Query = ("SELECT Student.StudentNr, Student.Voornaam, Student.Achternaam, [Student.E-mail], Instelling.InstellingNaam, Instelling.AfdelingNaam, Instelling.AfdelingNr, Instelling.NaamContact, Instelling.ContactNr FROM Student, Instelling, Inschrijving WHERE Student.StudentNr = Inschrijving.StudentNr AND Instelling.InstellingNr = Inschrijving.InstellingNr");
@@ -199,6 +202,208 @@ namespace project
         private void Afsluiten_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        int een = 0;
+        int Knopjr1 = 0;
+        private void Jaar1_Click(object sender, EventArgs e)
+        {
+            if (een == 0)
+            {
+                Jaar1.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar1.ForeColor = Color.White;
+                een = 1;
+                Knopjr1 = 1;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+            else
+            {
+                Jaar1.BackColor = Color.White;
+                Jaar1.ForeColor = Color.Black;
+                een = 0;
+                Knopjr1 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+        }
+
+
+      
+
+       
+
+        private void Alles_Click(object sender, EventArgs e)
+        {
+
+
+            allesgeselecteerd();
+        }
+       
+
+        int twee;
+        int Knopjr2 = 0;
+        private void Jaar2_Click_1(object sender, EventArgs e)
+        {
+            if (twee == 0)
+            {
+                Jaar2.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar2.ForeColor = Color.White;
+                twee = 1;
+                Knopjr2 = 2;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+            else
+            {
+                Jaar2.BackColor = Color.White;
+                Jaar2.ForeColor = Color.Black;
+                twee = 0;
+                Knopjr2 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+        }
+        int drie;
+        int Knopjr3 = 0;
+        private void Jaar3_Click_1(object sender, EventArgs e)
+        {
+            if (drie == 0)
+            {
+                Jaar3.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar3.ForeColor = Color.White;
+                drie = 1;
+                Knopjr3 = 3;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+            else
+            {
+                Jaar3.BackColor = Color.White;
+                Jaar3.ForeColor = Color.Black;
+                drie = 0;
+                Knopjr3 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+        }
+
+        int vier;
+        int Knopjr4 = 0;
+        private void Jaar4_Click_1(object sender, EventArgs e)
+        {
+            if (vier == 0)
+            {
+                Jaar4.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar4.ForeColor = Color.White;
+                vier = 1;
+                Knopjr4 = 4;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+            else
+            {
+                Jaar4.BackColor = Color.White;
+                Jaar4.ForeColor = Color.Black;
+                vier = 0;
+                Knopjr4 = 0;
+                if (Allen == 1)
+                { allesgeselecteerd(); }
+                Student();
+            }
+        }
+
+        int tijd;
+        string JaarDeel = "0";
+        private void Deeltijd_Click_1(object sender, EventArgs e)
+        {
+            if (tijd == 0)
+            {
+                Deeltijd.BackColor = Color.FromArgb(0, 55, 97);
+                Deeltijd.ForeColor = Color.White;
+                tijd = 1;
+                JaarDeel = "DT";
+                Student();
+            }
+            else
+            {
+                Deeltijd.BackColor = Color.White;
+                Deeltijd.ForeColor = Color.Black;
+                tijd = 0;
+                JaarDeel = "0";
+                Student();
+            }
+        }
+
+        int Allen;
+        private void Alles_Click_1(object sender, EventArgs e)
+        {
+            allesgeselecteerd();
+        }
+        private void allesgeselecteerd()
+        {
+            if (Allen == 0)
+            {
+                Alles.BackColor = Color.FromArgb(0, 55, 97);
+                Alles.ForeColor = Color.White;
+
+                Allen = 1;
+                Jaar4.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar4.ForeColor = Color.White;
+                vier = 1;
+                Knopjr4 = 4;
+                Deeltijd.BackColor = Color.FromArgb(0, 55, 97);
+                Deeltijd.ForeColor = Color.White;
+                tijd = 1;
+                JaarDeel = "DT";
+                Jaar3.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar3.ForeColor = Color.White;
+                drie = 1;
+                Knopjr3 = 3;
+                Jaar2.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar2.ForeColor = Color.White;
+                twee = 1;
+                Knopjr2 = 2;
+                Jaar1.BackColor = Color.FromArgb(0, 55, 97);
+                Jaar1.ForeColor = Color.White;
+                een = 1;
+                Knopjr1 = 1;
+                Student();
+            }
+            else
+            {
+                Alles.BackColor = Color.White;
+                Alles.ForeColor = Color.Black;
+                Allen = 0;
+                Jaar1.BackColor = Color.White;
+                Jaar1.ForeColor = Color.Black;
+                een = 0;
+                Knopjr1 = 0;
+                Jaar2.BackColor = Color.White;
+                Jaar2.ForeColor = Color.Black;
+                twee = 0;
+                Knopjr2 = 0;
+                Jaar3.BackColor = Color.White;
+                Jaar3.ForeColor = Color.Black;
+                drie = 0;
+                Knopjr3 = 0;
+                Jaar4.BackColor = Color.White;
+                Jaar4.ForeColor = Color.Black;
+                vier = 0;
+                Knopjr4 = 0;
+                Deeltijd.BackColor = Color.White;
+                Deeltijd.ForeColor = Color.Black;
+                tijd = 0;
+                JaarDeel = "0";
+               Student();
+            }
         }
     }
 }

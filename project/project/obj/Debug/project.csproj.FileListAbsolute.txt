@@ -31,3 +31,14 @@ C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.DatabaseConnec
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.Inschrijving.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InschrijvingToevoegen.resources
 C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.InschrijvingAanpassen.resources
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\itextsharp.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\itextsharp.licensekey.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\itextsharp.xfaworker.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\itextsharp.xtra.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\Jint.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\log4net.dll
+C:\Users\Gerbrand\Documents\ICG\project\project\bin\Debug\itextsharp.xml
+C:\Users\Gerbrand\Documents\ICG\project\project\obj\Debug\project.csproj.project.exe.config
